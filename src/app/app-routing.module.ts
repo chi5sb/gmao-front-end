@@ -15,11 +15,11 @@ const componenets = [
 ];
 
 const routes: Routes = [
-  {path: "", component: componenets[4]},
-  {path: "home",component: componenets[4]},
-  {path: "admin", component: componenets[3]},
-  {path: "collaborateur",component: componenets[2]},
-  {path: "chef-equipe", component: componenets[1]}
+  // {path: '', component: componenets[3]},
+  {path: 'home',component: componenets[3]},
+  {path: 'admin', component: componenets[2]},
+  {path: 'collaborateur',component: componenets[1]},
+  {path: 'chef-equipe', component: componenets[0]}
 ];
 
 
