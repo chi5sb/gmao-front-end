@@ -9,6 +9,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { ChefEquipeComponent } from './chef-equipe/chef-equipe.component';
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
+import { HomeComponent } from './home/home.component';
+import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 
 
 @NgModule({
@@ -17,7 +19,9 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
     NavbarComponent,
     ChefEquipeComponent,
     CollaborateurComponent,
-    AdministrateurComponent
+    AdministrateurComponent,
+    HomeComponent,
+    PageNotfoundComponent
   ],
   imports: [
     BrowserModule,
