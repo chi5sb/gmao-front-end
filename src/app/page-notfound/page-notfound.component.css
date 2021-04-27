@@ -1,0 +1,33 @@
+.container {
+  margin: 40vh auto 40vh;
+  width: 100vw;
+  height: 0vh;
+  display: inline-block;
+  text-align: center;
+}
+/* span > i {
+  font-size: 10rem;
+  display: block;
+  margin: 0 50vw 1rem;
+} */
+.errorCode {
+  text-align: center;
+  color: #333230;
+  font-size: 8rem;
+  margin-bottom: 3rem;
+}
+h3 {
+  text-align: center;
+  font-size: 3rem;
+  line-height: 2.5rem;
+  color: #52504d;
+  /* word-break: break-all; */
+}
+.error-btn > a {
+  color: #fff;
+  background-color: #3f51b5;
+  display: inline-block;
+  margin: 0 auto;
+  text-decoration: none;
+  text-align: center;
+}

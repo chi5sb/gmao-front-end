@@ -15,7 +15,7 @@ const componenets = [
 ];
 
 const routes: Routes = [
-  // {path: '', component: componenets[3]},
+  {path: '', component: componenets[3]},
   {path: 'home',component: componenets[3]},
   {path: 'admin', component: componenets[2]},
   {path: 'collaborateur',component: componenets[1]},
