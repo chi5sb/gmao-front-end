@@ -19,7 +19,8 @@ const routes: Routes = [
   {path: 'home',component: componenets[3]},
   {path: 'admin', component: componenets[2]},
   {path: 'collaborateur',component: componenets[1]},
-  {path: 'chef-equipe', component: componenets[0]}
+  {path: 'chef-equipe', component: componenets[0]},
+  {path: '**', component: componenets[4]}
 ];
 
 
