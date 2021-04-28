@@ -47,6 +47,7 @@ import { EquipeListComponent } from './equipes/equipe-list/equipe-list.component
     FlexLayoutModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  entryComponents : [EquipeCreateComponent]
 })
 export class AppModule { }

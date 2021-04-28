@@ -1,3 +1,6 @@
+import { MembreEquipe } from './../../controller/model/membre-equipe.model';
+import { Equipe } from './../../controller/model/equipe.model';
+import { EquipesService } from './../../controller/service/equipes.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EquipeCreateComponent implements OnInit {
 
-  constructor() { }
 
+  constructor(private equipeService:EquipesService) { }
+
+  get equipe(): Equipe {
+    return this.equipeService.equipe;
+  }
+  get membre(): MembreEquipe {
+    return this.equipeService._membre;
+  }
   ngOnInit(): void {
   }
-
 }
