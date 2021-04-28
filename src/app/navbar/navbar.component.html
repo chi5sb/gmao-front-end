@@ -12,13 +12,15 @@
       <span>GMAO</span>
       <span class="example-spacer"></span>
       <div fxShow="true" fxHide.lt-md="true">
-        <a routerLink="/home" routerLinkActive="active" mat-button>Accueil</a>
+        <a routerLink="home" routerLinkActive="active" mat-button>Accueil</a>
         <a routerLink="admin" routerLinkActive="active" mat-button
           >Administrateur</a
         >
         <a routerLink="collaborateur" routerLinkActive="active" mat-button
           >Collaborateur</a
         >
+        <a routerLink="equipes" routerLinkActive="active" mat-button>Equipes</a>
+
         <a routerLink="chef-equipe" routerLinkActive="active" mat-button
           >Chef-Equipe</a
         >
@@ -49,6 +51,13 @@
           mat-list-item
           (click)="sidenav.toggle()"
           >Collaborateur</a
+        >
+        <a
+          routerLink="equipes"
+          routerLinkActive="active"
+          mat-list-item
+          (click)="sidenav.toggle()"
+          >Equipes</a
         >
         <a
           routerLink="chef-equipe"

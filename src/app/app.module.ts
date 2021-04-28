@@ -16,6 +16,9 @@ import {MatListModule} from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
+import { EquipesComponent } from './equipes/equipes.component';
+import { EquipeCreateComponent } from './equipes/equipe-create/equipe-create.component';
+import { EquipeListComponent } from './equipes/equipe-list/equipe-list.component';
 
 
 @NgModule({
@@ -26,7 +29,10 @@ import { MatButtonModule } from '@angular/material/button';
     CollaborateurComponent,
     AdministrateurComponent,
     HomeComponent,
-    PageNotfoundComponent
+    PageNotfoundComponent,
+    EquipesComponent,
+    EquipeCreateComponent,
+    EquipeListComponent
   ],
   imports: [
     BrowserModule,

@@ -1,9 +1,10 @@
+import { EquipesComponent } from './equipes/equipes.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { ChefEquipeComponent } from './chef-equipe/chef-equipe.component';
 import { CollaborateurComponent } from './collaborateur/collaborateur.component';
 import { AdministrateurComponent } from './administrateur/administrateur.component';
 import { HomeComponent } from './home/home.component';
-import { NgModule } from '@angular/core';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 const componenets = [
@@ -11,7 +12,8 @@ const componenets = [
   CollaborateurComponent,
   AdministrateurComponent,
   HomeComponent,
-  PageNotfoundComponent
+  PageNotfoundComponent,
+  EquipesComponent,
 ];
 
 const routes: Routes = [
@@ -20,6 +22,7 @@ const routes: Routes = [
   {path: 'admin', component: componenets[2]},
   {path: 'collaborateur',component: componenets[1]},
   {path: 'chef-equipe', component: componenets[0]},
+  {path: 'equipes',component: componenets[5]},
   {path: '**', component: componenets[4]}
 ];
 
