@@ -13,7 +13,8 @@ export class EquipesService {
   public _equipes : Array<Equipe>;
   public _membre : MembreEquipe;
 
-  constructor(private diag : MatDialog) { }
+  constructor(private diag : MatDialog
+    ) { }
   
   get equipe(): Equipe {
     if (this._equipe == null){

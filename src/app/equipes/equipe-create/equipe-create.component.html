@@ -1,4 +1,4 @@
-<p>equipe-create works!</p>
+<mat-card sytle="backgr">Créer des Equipes</mat-card>
 <!-- <mat-vertical-stepper #stepper>
   <mat-step>
     <form>
@@ -34,3 +34,48 @@
     </div>
   </mat-step>
 </mat-vertical-stepper> -->
+<mat-tab-group>
+  <mat-tab label="Equipe"> 
+    
+      
+      <form class="example-form">
+        <mat-form-field class="example-full-width">
+          <mat-label>Refernce</mat-label>
+          <input matInput placeholder >
+        </mat-form-field>
+      
+        <mat-form-field class="example-full-width">
+          <mat-label>Libelle</mat-label>
+          <input matInput placeholder>
+        </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>chefEquipe</mat-label>
+          <input matInput placeholder>
+        </mat-form-field>
+      </form>
+    
+  
+  </mat-tab>
+  <mat-tab label="Collaborateur"> <mat-card>
+      
+    <form class="example-form">
+      <mat-form-field class="example-full-width">
+        <mat-label>Nom</mat-label>
+        <input matInput placeholder >
+      </mat-form-field>
+    
+      <mat-form-field class="example-full-width">
+        <mat-label>Prénom</mat-label>
+        <input matInput placeholder>
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+        <mat-label>Téléphone</mat-label>
+        <input matInput placeholder>
+      </mat-form-field>
+    </form>
+  
+</mat-card></mat-tab>
+  <mat-tab  label="save">  
+    <label class="but">if you done pls click button save</label>
+    <button class="but" mat-raised-button color="primary">save</button>  </mat-tab>
+</mat-tab-group>

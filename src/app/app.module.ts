@@ -19,6 +19,9 @@ import { MatButtonModule } from '@angular/material/button';
 import { EquipesComponent } from './equipes/equipes.component';
 import { EquipeCreateComponent } from './equipes/equipe-create/equipe-create.component';
 import { EquipeListComponent } from './equipes/equipe-list/equipe-list.component';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatCardModule } from '@angular/material/card';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 
 
 @NgModule({
@@ -44,7 +47,10 @@ import { EquipeListComponent } from './equipes/equipe-list/equipe-list.component
     MatToolbarModule,
     MatSidenavModule,
     MatButtonModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    MatTabsModule,
+    MatCardModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],

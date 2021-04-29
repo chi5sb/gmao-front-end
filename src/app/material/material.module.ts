@@ -9,8 +9,9 @@ import {MatTableModule} from '@angular/material/table';
 import {MatDialogModule} from '@angular/material/dialog';
 import {MatInputModule} from '@angular/material/input';
 import {MatStepperModule} from '@angular/material/stepper';
-
-
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatCardModule} from '@angular/material/card';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
 
 const  MaterialModules = [
   MatButtonModule,
@@ -20,7 +21,12 @@ const  MaterialModules = [
   MatTableModule,
   MatDialogModule,
   MatInputModule,
-  MatStepperModule
+  MatStepperModule,
+  MatTabsModule,
+  MatCardModule,
+  MatSnackBarModule,
+  
+  
 ];
 @NgModule({
   imports: [MaterialModules],

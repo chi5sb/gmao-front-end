@@ -21,4 +21,5 @@ export class EquipeCreateComponent implements OnInit {
   }
   ngOnInit(): void {
   }
+  
 }
