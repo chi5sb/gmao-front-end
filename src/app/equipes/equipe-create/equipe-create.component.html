@@ -1,56 +1,27 @@
-<mat-card sytle="backgr">Créer des Equipes</mat-card>
-<!-- <mat-vertical-stepper #stepper>
-  <mat-step>
-    <form>
-      <ng-template matStepLabel>Fill out your name</ng-template>
-      <mat-form-field>
-        <mat-label>Name</mat-label>
-        <input matInput placeholder="Last name, First name" required />
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <form>
-      <ng-template matStepLabel>Fill out your address</ng-template>
-      <mat-form-field>
-        <mat-label>Address</mat-label>
-        <input matInput placeholder="Ex. 1 Main St, New York, NY" required />
-      </mat-form-field>
-      <div>
-        <button mat-button matStepperPrevious>Back</button>
-        <button mat-button matStepperNext>Next</button>
-      </div>
-    </form>
-  </mat-step>
-  <mat-step>
-    <ng-template matStepLabel>Done</ng-template>
-    <p>You are now done.</p>
-    <div>
-      <button mat-button matStepperPrevious>Back</button>
-      <button mat-button (click)="stepper.reset()">Reset</button>
-    </div>
-  </mat-step>
-</mat-vertical-stepper> -->
+<mat-card style="background-color:#3F51B5; color: white;">Créer des Equipes</mat-card>
+
 <mat-tab-group>
   <mat-tab label="Equipe"> 
     
       
       <form class="example-form">
         <mat-form-field class="example-full-width">
-          <mat-label>Refernce</mat-label>
-          <input matInput placeholder >
+          <mat-label>Id</mat-label>
+          <input matInput placeholder [(ngModel)]="equipe.id" >
         </mat-form-field>
+        <mat-form-field class="example-full-width">
+          <mat-label>Refernce</mat-label>
+          <input matInput placeholder [(ngModel)]="equipe.ref" >
+        </mat-form-field>
+        
       
         <mat-form-field class="example-full-width">
           <mat-label>Libelle</mat-label>
-          <input matInput placeholder>
+          <input matInput placeholder [(ngModel)]="equipe.libelle">
         </mat-form-field>
         <mat-form-field class="example-full-width">
-          <mat-label>chefEquipe</mat-label>
-          <input matInput placeholder>
+          <mat-label>chef Equipe</mat-label>
+          <input matInput placeholder [(ngModel)]="equipe.chefEquipe">
         </mat-form-field>
       </form>
     
@@ -72,10 +43,33 @@
         <mat-label>Téléphone</mat-label>
         <input matInput placeholder>
       </mat-form-field>
+      <button class="but" mat-raised-button color="primary" (click)="addMembres()">+</button>
     </form>
   
 </mat-card></mat-tab>
   <mat-tab  label="save">  
-    <label class="but">if you done pls click button save</label>
-    <button class="but" mat-raised-button color="primary">save</button>  </mat-tab>
+    <mat-card style="width:100%">
+    
+      
+            <table  style="width:50%">
+        <tr>
+          <th style="background-color:#3F51B5; color: white;">id</th>
+          <th style="background-color:#3F51B5; color: white;">Nom</th>
+          <th style="background-color:#3F51B5; color: white">Prénom</th>
+          <th style="background-color:#3F51B5; color: white">Télephone</th>
+        </tr>
+        <tbody>
+          <tr *ngFor="let c of equipe.membres">
+            <td>{{c.id}}</td>
+            <td>{{c.nom}}</td>
+            <td>{{c.prenom}}</td>
+            <td>{{c.phone}}</td>
+           
+          </tr>
+          </tbody>
+      </table>
+    
+    </mat-card>
+    
+    <button class="but" mat-raised-button color="primary" (click)="save()">save</button>  </mat-tab>
 </mat-tab-group>

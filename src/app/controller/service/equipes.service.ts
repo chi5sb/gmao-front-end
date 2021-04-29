@@ -55,5 +55,29 @@ export class EquipesService {
 
   }
 
-  
+  public save(){
+    this.equipe.id = this.equipes.length + 1;
+      this.equipes.push(this.mycloneEquipe(this.equipe));
+  }
+  public addMembres() {
+    this.equipe.membres.push(this.cloneMembre(this.membre));
+    this.membre = new MembreEquipe();
+  }
+  private mycloneEquipe(equipe: Equipe) {
+    const myClone = new Equipe();
+    myClone.id = equipe.id;
+    myClone.ref = equipe.ref;
+    myClone.libelle = equipe.libelle;
+    myClone.chefEquipe = equipe.chefEquipe;
+    return myClone;
+  }
+  private cloneMembre(membre: MembreEquipe) {
+    const myCloneMembre = new MembreEquipe();
+    myCloneMembre.id = membre.id;
+    myCloneMembre.nom = membre.nom;
+    myCloneMembre.prenom = membre.prenom;
+    myCloneMembre.phone = membre.phone;
+    return myCloneMembre;
+
+  }
 }

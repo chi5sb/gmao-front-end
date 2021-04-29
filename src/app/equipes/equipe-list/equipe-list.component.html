@@ -1,3 +1,42 @@
-<button mat-button="warn" (click)="creerEquipe()">Creer</button>
 
+<mat-card style="width:100%">
+    
+  <div class="search-div">
+    <button mat-raised-button   (click)="creerEquipe()">
+      <mat-icon>add</mat-icon>Create
+    </button>
+    <mat-form-field class="search-form-field" floatLabel="never">
+      <input matInput  placeholder="Search" >
+      <button mat-button matSuffix mat-icon-button >
+        <mat-icon>close</mat-icon>
+      </button>
+    </mat-form-field>
+  </div>
+  
+        <table  style="width:40%">
+    <tr>
+      <th style="background-color:#3F51B5; color: white;">id</th>
+      <th style="background-color:#3F51B5; color: white;">Refernce</th>
+      <th style="background-color:#3F51B5; color: white">Libelle</th>
+      <th style="background-color:#3F51B5; color: white">Chef d'équipe</th>
+    </tr>
+    <tbody>
+      <tr *ngFor="let c of equipes">
+        <td>{{c.id}}</td>
+        <td>{{c.ref}}</td>
+        <td>{{c.libelle}}</td>
+        <td>{{c.chefEquipe}}</td>
+       
+      </tr>
+      </tbody>
+  </table>
+  <table class="detail" style="width:60%">
+    <tr>
+      <th style="background-color:#3F51B5; color: white;">id</th>
+      <th style="background-color:#3F51B5; color: white;">Nom</th>
+      <th style="background-color:#3F51B5; color: white">Prénom</th>
+      <th style="background-color:#3F51B5; color: white">Téléphone</th>
+    </tr>
+  </table>
 
+</mat-card>

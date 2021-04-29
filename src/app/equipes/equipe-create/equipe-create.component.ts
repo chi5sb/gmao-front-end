@@ -19,6 +19,12 @@ export class EquipeCreateComponent implements OnInit {
   get membre(): MembreEquipe {
     return this.equipeService._membre;
   }
+  public save() {
+    this.equipeService.save();
+  }
+  public addMembres() {
+    this.equipeService.addMembres();}
+    
   ngOnInit(): void {
   }
   
