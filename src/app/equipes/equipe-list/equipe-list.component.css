@@ -1,22 +1,46 @@
 table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-  }
-  
-  td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-  }
-  
-  tr:nth-child(even) {
-    background-color: #dddddd;
-  }
-  mat-form-field{
-    margin-left: 10px;
-      
-  }
-  .detail{
-    display: block;
-  }
+  /* border-collapse: collapse; */
+  width: 100%;
+  margin: auto;
+}
+
+td,
+th {
+  border: 1px solid #dddddd;
+  text-align: centre;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+/* }
+mat-form-field {
+  margin-left: 10px;
+}
+
+.table-equipes {
+  display: inline-block;
+  width: 45%;
+  height: 60vh;
+  /* margin: 1rem; */
+/* } */
+/* .table-membre {
+  margin-top: 10rem;
+  display: inline-block;
+  width: 45%;
+  margin: 1rem;
+}
+
+.search-div > button {
+  margin-top: 0;
+} */
+.container {
+  margin: 5vh auto;
+  width: 100%;
+}
+
+.card-header {
+  text-align: center;
+  font-size: 1.5rem;
+}
