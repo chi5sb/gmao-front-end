@@ -19,6 +19,8 @@ export class EquipesService {
   get equipe(): Equipe {
     if (this._equipe == null){
       this._equipe = new Equipe();
+      let chef = new MembreEquipe();
+      this._equipe.chefEquipe = chef;
     }
     return this._equipe;
   }
@@ -61,7 +63,7 @@ export class EquipesService {
   }
   public addMembres() {
     this.equipe.membres.push(this.cloneMembre(this.membre));
-    this.membre = new MembreEquipe();
+    this.membre = null;
   }
   private mycloneEquipe(equipe: Equipe) {
     const myClone = new Equipe();

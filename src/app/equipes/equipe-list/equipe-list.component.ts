@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./equipe-list.component.css']
 })
 export class EquipeListComponent implements OnInit {
+  panelOpenState = false;
 
   constructor(private equipeService:EquipesService) { }
   get equipes(): Array<Equipe> {

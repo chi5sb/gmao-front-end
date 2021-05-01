@@ -12,12 +12,13 @@ export class EquipeCreateComponent implements OnInit {
 
 
   constructor(private equipeService:EquipesService) { }
+  panelOpenState = false;
 
   get equipe(): Equipe {
     return this.equipeService.equipe;
   }
   get membre(): MembreEquipe {
-    return this.equipeService._membre;
+    return this.equipeService.membre;
   }
   public save() {
     this.equipeService.save();

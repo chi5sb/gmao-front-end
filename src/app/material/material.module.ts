@@ -12,6 +12,8 @@ import {MatStepperModule} from '@angular/material/stepper';
 import {MatTabsModule} from '@angular/material/tabs';
 import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
+import {MatExpansionModule} from '@angular/material/expansion';
+
 
 const  MaterialModules = [
   MatButtonModule,
@@ -25,8 +27,7 @@ const  MaterialModules = [
   MatTabsModule,
   MatCardModule,
   MatSnackBarModule,
-  
-  
+  MatExpansionModule
 ];
 @NgModule({
   imports: [MaterialModules],
