@@ -12,10 +12,12 @@ export class EquipesService {
   public _equipe: Equipe; 
   public _equipes : Array<Equipe>;
   public _membre : MembreEquipe;
+  private _index: number;
 
   constructor(private diag : MatDialog
     ) { }
   
+    
   get equipe(): Equipe {
     if (this._equipe == null){
       this._equipe = new Equipe();
@@ -63,7 +65,11 @@ export class EquipesService {
   }
   public addMembres() {
     this.equipe.membres.push(this.cloneMembre(this.membre));
-    this.membre = null;
+   
+  }
+  public update(index: number, equipe: Equipe) {
+    this.equipe = this.mycloneEquipe(equipe);
+    this._index = index;
   }
   private mycloneEquipe(equipe: Equipe) {
     const myClone = new Equipe();

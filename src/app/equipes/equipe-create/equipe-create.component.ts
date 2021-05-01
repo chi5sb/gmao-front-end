@@ -26,6 +26,7 @@ export class EquipeCreateComponent implements OnInit {
   public addMembres() {
     this.equipeService.addMembres();}
     
+    
   ngOnInit(): void {
   }
   

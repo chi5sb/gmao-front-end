@@ -18,7 +18,12 @@ export class EquipeListComponent implements OnInit {
   creerEquipe(){
     this.equipeService.creerEquipe();
   }
-
+  public delete(index: number){
+    this.equipes.splice(index, 1);
+}
+  public update(index: number, equipe: Equipe){
+    this.equipeService.update(index, equipe);
+  }
   ngOnInit(): void {
   }
 

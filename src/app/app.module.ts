@@ -52,7 +52,8 @@ import { FormsModule } from '@angular/forms';
     MatTabsModule,
     MatCardModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent],
