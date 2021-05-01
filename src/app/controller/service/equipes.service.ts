@@ -21,6 +21,8 @@ export class EquipesService {
   get equipe(): Equipe {
     if (this._equipe == null){
       this._equipe = new Equipe();
+      let membres = new Array<MembreEquipe>();
+      this._equipe.membres = membres;
       let chef = new MembreEquipe();
       this._equipe.chefEquipe = chef;
     }

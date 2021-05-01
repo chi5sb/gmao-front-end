@@ -1,232 +1,123 @@
-<!-- <mat-card style="background-color: #3f51b5; color: white"
-  >Créer des Equipes</mat-card
->
-<mat-tab-group>
-  <mat-tab label="Equipe">
-    <form class="example-form">
-      <mat-form-field class="example-full-width">
-        <mat-label>Id</mat-label>
-        <input matInput placeholder [(ngModel)]="equipe.id" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>Refernce</mat-label>
-        <input matInput placeholder [(ngModel)]="equipe.ref" />
-      </mat-form-field>
-
-      <mat-form-field class="example-full-width">
-        <mat-label>Libelle</mat-label>
-        <input matInput placeholder [(ngModel)]="equipe.libelle" />
-      </mat-form-field>
-      <mat-form-field class="example-full-width">
-        <mat-label>chef Equipe</mat-label>
-        <input matInput placeholder [(ngModel)]="equipe.chefEquipe" />
-      </mat-form-field>
-    </form>
-  </mat-tab>
-  <mat-tab label="Collaborateur">
-    <mat-card>
-      <form class="example-form">
-        <mat-form-field class="example-full-width">
-          <mat-label>Nom</mat-label>
-          <input matInput placeholder />
-        </mat-form-field>
-
-        <mat-form-field class="example-full-width">
-          <mat-label>Prénom</mat-label>
-          <input matInput placeholder />
-        </mat-form-field>
-        <mat-form-field class="example-full-width">
-          <mat-label>Téléphone</mat-label>
-          <input matInput placeholder />
-        </mat-form-field>
-        <button
-          class="but"
-          mat-raised-button
-          color="primary"
-          (click)="addMembres()"
-        >
-          +
-        </button>
-      </form>
-    </mat-card></mat-tab
-  >
-  <mat-tab label="save">
-    <mat-card style="width: 100%">
-      <table style="width: 50%">
-        <tr>
-          <th style="background-color: #3f51b5; color: white">id</th>
-          <th style="background-color: #3f51b5; color: white">Nom</th>
-          <th style="background-color: #3f51b5; color: white">Prénom</th>
-          <th style="background-color: #3f51b5; color: white">Télephone</th>
-        </tr>
-        <tbody>
-          <tr *ngFor="let c of equipe.membres">
-            <td>{{ c.id }}</td>
-            <td>{{ c.nom }}</td>
-            <td>{{ c.prenom }}</td>
-            <td>{{ c.phone }}</td>
-          </tr>
-        </tbody>
-      </table>
-    </mat-card>
-    <button class="but" mat-raised-button color="primary" (click)="save()">
-      save
-    </button>
-  </mat-tab>
-</mat-tab-group> -->
-
-<!-- <mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title> This is the expansion title </mat-panel-title>
-      <mat-panel-description>
-        This is a summary of the content
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    Hello wolrd
-  </mat-expansion-panel>
-
-  <mat-expansion-panel
-    (opened)="panelOpenState = true"
-    (closed)="panelOpenState = false"
-  >
-    <mat-expansion-panel-header>
-      <mat-panel-title> Self aware panel </mat-panel-title>
-      <mat-panel-description>
-        Currently I am {{ panelOpenState ? "open" : "closed" }}
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <p>I'm visible because I am open</p>
-  </mat-expansion-panel>
-</mat-accordion> -->
 <div class="row">
-  <div class="col-lg-5">
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        Créer Equipe
-      </mat-panel-title>
-      <mat-panel-description>
-        This is a summary of the content
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <mat-tab-group>
-      <mat-tab label="Equipes"> <div class="col-md-12">
-        <div class="card">
-          <div class="card-header">Ajouter un Equipe</div>
-          <div class="card-body">
-            <div class="form-group">
-              <label for="ref">Reference</label>
-              <input
-                [(ngModel)]="equipe.ref"
-                name="ref"
-                type="text"
-                class="form-control"
-              />
-              <label for="libelle">Libelle</label>
-              <input
-                [(ngModel)]="equipe.libelle"
-                name="libelle"
-                type="text"
-                class="form-control"
-              />
-              <label for="ref-chef">Reference Chef</label>
-              <input
-                [(ngModel)]="equipe.chefEquipe.id"
-                name="ref-chef"
-                type="text"
-                class="form-control"
-              />
+  <div class="col-md-6">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> Créer Equipe </mat-panel-title>
+          <mat-panel-description>
+            This is a summary of the content
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <mat-tab-group>
+          <mat-tab label="Equipes">
+            <div class="card">
+              <div class="card-header">Ajouter un Equipe</div>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="ref">Reference</label>
+                  <input
+                    [(ngModel)]="equipe.ref"
+                    name="ref"
+                    type="text"
+                    class="form-control"
+                  />
+                  <label for="libelle">Libelle</label>
+                  <input
+                    [(ngModel)]="equipe.libelle"
+                    name="libelle"
+                    type="text"
+                    class="form-control"
+                  />
+                  <label for="ref-chef">Reference Chef</label>
+                  <input
+                    [(ngModel)]="equipe.chefEquipe.id"
+                    name="ref-chef"
+                    type="text"
+                    class="form-control"
+                  />
+                </div>
+              </div>
             </div>
-          </div>
-          
-        </div>
-      </div> </mat-tab>
-      <mat-tab label="Collaborateures"> <div class="col-md-12">
-        <div class="card">
-          <div class="card-header"></div>
-          <div class="card-body">
-            <div class="form-group">
-              <label for="nom">Nom</label>
-              <input
-                [(ngModel)]="membre.nom"
-                type="text"
-                name="nom"
-                class="form-control"
-              />
-              <label for="prenom">Prenom</label>
-              <input
-                [(ngModel)]="membre.prenom"
-                type="text"
-                name=""
-                class="form-control"
-              />
-              <label for="tele">Telephone</label
-              ><input
-                [(ngModel)]="membre.phone"
-                type="text"
-                name="tele"
-                class="form-control"
-              />
-              <label for="email">Email</label>
-              <input
-                [(ngModel)]="membre.email"
-                type="text"
-                name="email"
-                class="form-control"
-              />
-              <label for="username">Username</label>
-              <input
-                [(ngModel)]="membre.username"
-                type="text"
-                name=""
-                class="form-control"
-              />
-              <label for="password">password</label>
-              <input
-                [(ngModel)]="membre.password"
-                type="password"
-                name="password"
-                class="form-control"
-              />
+          </mat-tab>
+          <mat-tab label="Collaborateures">
+            <div class="card">
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="nom">Nom</label>
+                  <input
+                    [(ngModel)]="membre.nom"
+                    type="text"
+                    name="nom"
+                    class="form-control"
+                  />
+                  <label for="prenom">Prenom</label>
+                  <input
+                    [(ngModel)]="membre.prenom"
+                    type="text"
+                    name=""
+                    class="form-control"
+                  />
+                  <label for="tele">Telephone</label
+                  ><input
+                    [(ngModel)]="membre.phone"
+                    type="text"
+                    name="tele"
+                    class="form-control"
+                  />
+                  <label for="email">Email</label>
+                  <input
+                    [(ngModel)]="membre.email"
+                    type="text"
+                    name="email"
+                    class="form-control"
+                  />
+                  <label for="username">Username</label>
+                  <input
+                    [(ngModel)]="membre.username"
+                    type="text"
+                    name=""
+                    class="form-control"
+                  />
+                  <label for="password">password</label>
+                  <input
+                    [(ngModel)]="membre.password"
+                    type="password"
+                    name="password"
+                    class="form-control"
+                  />
+                </div>
+                <div class="card-footer">
+                  <button
+                    class="but btn-block"
+                    mat-raised-button
+                    color="primary"
+                    (click)="addMembres()"
+                  >
+                    +
+                  </button>
+                </div>
+              </div>
             </div>
-            <div class="card-footer">
-              <button
-                class="but btn-block"
-                mat-raised-button
-                color="primary"
-                (click)="addMembres()"
-              >
-                +
-              </button>
-            </div>
-          </div>
-        </div>
-      </div> </mat-tab>
-    </mat-tab-group>
-    
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    
-    
-  </mat-expansion-panel>
-</mat-accordion>
-</div>
-<div class="col-lg-6">
-<mat-accordion>
-  <mat-expansion-panel hideToggle>
-    <mat-expansion-panel-header>
-      <mat-panel-title>
-        This is the expansion title
-      </mat-panel-title>
-      <mat-panel-description>
-        This is a summary of the content
-      </mat-panel-description>
-    </mat-expansion-panel-header>
-    <div class="row">
-      <div class="col-md-12">
+          </mat-tab>
+        </mat-tab-group>
+      </mat-expansion-panel>
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+
+  <div class="col-md-6">
+    <mat-accordion>
+      <mat-expansion-panel hideToggle>
+        <mat-expansion-panel-header>
+          <mat-panel-title> This is the expansion title </mat-panel-title>
+          <mat-panel-description>
+            This is a summary of the content
+          </mat-panel-description>
+        </mat-expansion-panel-header>
         <div class="card">
           <div
             class="card-header"
@@ -242,16 +133,14 @@
                 <th style="font-weight: bold">Telephone</th>
                 <th style="font-weight: bold">Email</th>
                 <th style="font-weight: bold">Username</th>
-                <th style="font-weight: bold">Password</th>
               </thead>
               <tbody>
                 <tr *ngFor="let c of equipe.membres">
-                  <td bgcolor="yellow">{{ c.nom }}</td>
-                  <td bgcolor="#dcdcdc">{{ c.prenom }}</td>
-                  <td bgcolor="#ffebcd">{{ c.phone }}</td>
-                  <td bgcolor="#ffebcd">{{ c.email }}</td>
-                  <td bgcolor="#ffebcd">{{ c.username }}</td>
-                  <td bgcolor="#ffebcd">{{ c.password }}</td>
+                  <td>{{ c.nom }}</td>
+                  <td>{{ c.prenom }}</td>
+                  <td>{{ c.phone }}</td>
+                  <td>{{ c.email }}</td>
+                  <td>{{ c.username }}</td>
                 </tr>
               </tbody>
             </table>
@@ -267,15 +156,12 @@
             </button>
           </div>
         </div>
-        
-      </div>
-      
-    </div>
-  </mat-expansion-panel>
-  <mat-expansion-panel (opened)="panelOpenState = true"
-                       (closed)="panelOpenState = false">
-    
-  </mat-expansion-panel>
-</mat-accordion>
-</div>
+      </mat-expansion-panel>
+      <mat-expansion-panel
+        (opened)="panelOpenState = true"
+        (closed)="panelOpenState = false"
+      >
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
 </div>

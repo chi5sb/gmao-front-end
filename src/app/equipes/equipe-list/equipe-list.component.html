@@ -11,9 +11,7 @@
           </div> -->
 
 <div class="container">
-  <div class="row">
-    <app-equipe-create></app-equipe-create>
-  </div>
+  <app-equipe-create></app-equipe-create>
   <div class="row">
     <div class="col-lg-6">
       <div class="card">
@@ -33,8 +31,14 @@
                 <td>{{ c.ref }}</td>
                 <td>{{ c.libelle }}</td>
                 <td>{{ c.chefEquipe.id }}</td>
-                <td><span (click)="delete(i)"><i class="fa fa-trash btn btn-outline-danger"></i></span>
-      <span (click)="update(i,c)"><i class="fa fa-edit btn btn-outline-info"></i></span></td>
+                <td>
+                  <span (click)="delete(i)"
+                    ><i class="fa fa-trash btn btn-outline-danger"></i
+                  ></span>
+                  <span (click)="update(i, c)"
+                    ><i class="fa fa-edit btn btn-outline-info"></i
+                  ></span>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -55,7 +59,6 @@
             </tr>
           </table>
         </div>
-        <div class="card-footer"></div>
       </div>
     </div>
   </div>
