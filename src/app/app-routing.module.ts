@@ -6,6 +6,7 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { HomeComponent } from './home/home.component';
 import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+import {StockComponent} from "./stock/stock.component";
 
 const componenets = [
   ChefEquipeComponent,
@@ -14,6 +15,7 @@ const componenets = [
   HomeComponent,
   PageNotfoundComponent,
   EquipesComponent,
+  StockComponent,
 ];
 
 const routes: Routes = [
@@ -23,6 +25,7 @@ const routes: Routes = [
   {path: 'collaborateur',component: componenets[1]},
   {path: 'chef-equipe', component: componenets[0]},
   {path: 'equipes',component: componenets[5]},
+  {path: 'stock',component: componenets[6]},
   {path: '**', component: componenets[4]}
 ];
 

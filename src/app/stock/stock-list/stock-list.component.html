@@ -1,0 +1,26 @@
+<div class="card">
+  <div class="card-body">
+    <div class="card-headeer">Liste des Stocks</div>
+    <table  id="htmlData">
+      <thead class="thead-light">
+      <th>Id</th>
+      <th>Magasin</th>
+      <th>Material</th>
+      <th>Qte</th>
+      <th>Action</th>
+      </thead>
+      <tbody>
+      <tr *ngFor="let c of stocks index as i">
+        <td >{{i+1}}</td>
+        <td>{{c.magasin.reference}}</td>
+        <td  >{{c.material.reference}}</td>
+        <td >{{c.qte}}</td>
+        <td><span (click)="delete(i,c.magasin.reference,c.material.reference)"><i class="fa fa-trash btn btn-warning"></i> </span> <span (click)="update(i,c)"><i class="fa fa-edit ml-1 btn btn-info"></i> </span> </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="card-footer"></div>
+</div>
+
+

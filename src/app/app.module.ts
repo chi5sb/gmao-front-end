@@ -23,6 +23,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
+import {StockListComponent} from './stock/stock-list/stock-list.component';
+import {StockCreateComponent} from './stock/stock-create/stock-create.component';
+import {StockComponent} from './stock/stock.component';
+import {HttpClientModule} from '@angular/common/http';
 
 
 @NgModule({
@@ -36,7 +40,10 @@ import { FormsModule } from '@angular/forms';
     PageNotfoundComponent,
     EquipesComponent,
     EquipeCreateComponent,
-    EquipeListComponent
+    EquipeListComponent,
+    StockComponent,
+    StockCreateComponent,
+    StockListComponent
   ],
   imports: [
     BrowserModule,
@@ -53,6 +60,7 @@ import { FormsModule } from '@angular/forms';
     MatCardModule,
     MatSnackBarModule,
     FormsModule,
+    HttpClientModule,
     MatSnackBarModule
   ],
   providers: [],

@@ -1,0 +1,23 @@
+<div class="card">
+  <div class="card-header">Ajout de stock</div>
+  <div class="card-body">
+    <div class="form-group">
+      <label >Magasin</label><input type="text" [disabled]="isupdateable()" class="form-control" [(ngModel)]="stock.magasin.reference">
+    </div>
+    <div class="form-group">
+      <label >Material</label><input type="text" [disabled]="isupdateable()" class="form-control" [(ngModel)]="stock.material.reference">
+
+    </div>
+    <div class="form-group">
+      <label >qte</label>
+      <input type="number" class="form-control" [(ngModel)]="stock.qte">
+    </div>
+
+
+
+  </div>
+  <div class="card-footer">
+    <button class="btn-block btn " (click)="Save()">Valider</button>
+  </div>
+</div>
+
