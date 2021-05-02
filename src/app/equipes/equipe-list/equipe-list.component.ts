@@ -22,5 +22,7 @@ export class EquipeListComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  get equipeSelect(): Equipe {
+    return  this.equipeService.equipeSelect;
+  }
 }

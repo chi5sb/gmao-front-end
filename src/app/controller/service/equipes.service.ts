@@ -3,19 +3,43 @@ import { MembreEquipe } from './../model/membre-equipe.model';
 import { Injectable } from '@angular/core';
 import { Equipe } from '../model/equipe.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
+import { HttpClient } from '@angular/common/http';
 
 
 @Injectable({
   providedIn: 'root'
 })
 export class EquipesService {
+  private urlbase = 'http://localhost:8036';
+  private url = 'http://localhost:8036/equipe/';
+  private urlEquipe = 'http://localhost:8036/membreEquipe/';
   public _equipe: Equipe; 
   public _equipes : Array<Equipe>;
   public _membre : MembreEquipe;
   private _index: number;
+  private _equipeSelect : Equipe;
 
-  constructor(private diag : MatDialog
+  constructor(private diag : MatDialog,
+    private http: HttpClient
     ) { }
+    public findAll(){
+      this.http.get<Array<Equipe>>(this.url + '/').subscribe(
+        data => {
+          this.equipes = data ;
+        }, error => {
+          console.log(error); }
+      );
+    }
+    get equipeSelect(): Equipe {
+      if (this._equipeSelect == null){
+        this._equipeSelect = new Equipe();
+      }
+      return this._equipeSelect;
+    }
+  
+    set equipeSelect(value: Equipe) {
+      this._equipeSelect = value;
+    }
   
     
   get equipe(): Equipe {
@@ -51,12 +75,39 @@ export class EquipesService {
   set membre(value: MembreEquipe) {
     this._membre = value;
   }
+ 
   public save(){
-    this.equipe.id = this.equipes.length + 1;
+    if (this.equipe.id == null){
+      this.http.post( this.url + '/', this.equipe).subscribe(
+        data => {
+          if (data > 0){
+            this.equipes.push(this.mycloneEquipe(this.equipe));
+          }else {
+            alert('error lors de la création d equipe : ' + data);
+          }
+        }
+      );
+      this.equipe.id = this.equipes.length + 1;
       this.equipes.push(this.mycloneEquipe(this.equipe));
+
+    }else {
+      this.equipes[this._index] = this.mycloneEquipe(this.equipe);
+    }
   }
   public addMembres() {
     this.equipe.membres.push(this.cloneMembre(this.membre));
+  }
+  public findByEquipeRef(equipe: Equipe){
+    this.equipeSelect = equipe;
+    if ( this.equipeSelect != null) {
+      this.http.get<Array<MembreEquipe>>(this.urlEquipe + '/equipe/ref/' + equipe.ref).subscribe(
+        data => {
+          this.equipeSelect.membres = data;
+        }, error => {
+          console.log('wow');
+        }
+      );
+    }
   }
   public update(index: number, equipe: Equipe) {
     this.equipe = this.mycloneEquipe(equipe);
@@ -77,8 +128,8 @@ export class EquipesService {
   private cloneMembre(membre: MembreEquipe) {
     const myCloneMembre = new MembreEquipe();
     myCloneMembre.id = membre.id;
-    myCloneMembre.nom = membre.nom;
-    myCloneMembre.prenom = membre.prenom;
+    myCloneMembre.codeCollaborateur = membre.codeCollaborateur;
+    myCloneMembre.fullname = membre.fullname;
     myCloneMembre.phone = membre.phone;
     return myCloneMembre;
   }

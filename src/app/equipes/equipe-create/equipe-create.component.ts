@@ -27,7 +27,8 @@ export class EquipeCreateComponent implements OnInit {
     this.equipeService.addMembres();}
     
     
-  ngOnInit(): void {
-  }
+    ngOnInit(): void {
+      this.equipeService.findAll();
+    }
   
 }

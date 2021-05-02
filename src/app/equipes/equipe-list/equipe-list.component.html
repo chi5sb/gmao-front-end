@@ -26,6 +26,7 @@
                   <span (click)="update(i, c)"
                     ><i class="fa fa-edit btn btn-outline-info"></i
                   ></span>
+                  <button class="btn  btn-sm btn-outline-danger btn-trash "(click)="findByBudgetAnnee(c)"><i class="fa fa-plus"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -35,13 +36,12 @@
     </div>
     <div class="col-lg-6">
       <div class="card">
-        <div class="card-header">Membre Equipe</div>
+        <div class="card-header">les Collaborateures d'equipe {{equipeSelect.ref}}</div>
         <div class="card-body">
           <table class="membres">
             <tr>
               <th style="background-color: #3f51b5; color: white">id</th>
-              <th style="background-color: #3f51b5; color: white">Nom</th>
-              <th style="background-color: #3f51b5; color: white">Prénom</th>
+              <th style="background-color: #3f51b5; color: white">Nom et Prénom</th>
               <th style="background-color: #3f51b5; color: white">Téléphone</th>
               <th style="background-color: #3f51b5; color: white">Actions</th>
             </tr>
