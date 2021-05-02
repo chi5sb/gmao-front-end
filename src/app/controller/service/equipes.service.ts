@@ -51,23 +51,12 @@ export class EquipesService {
   set membre(value: MembreEquipe) {
     this._membre = value;
   }
-
-  creerEquipe() : void{
-    const diagConfig = new MatDialogConfig();
-    diagConfig.width= "60%";
-    diagConfig.autoFocus = true;
-    
-    this.diag.open(EquipeCreateComponent,diagConfig);
-
-  }
-
   public save(){
     this.equipe.id = this.equipes.length + 1;
       this.equipes.push(this.mycloneEquipe(this.equipe));
   }
   public addMembres() {
     this.equipe.membres.push(this.cloneMembre(this.membre));
-   
   }
   public update(index: number, equipe: Equipe) {
     this.equipe = this.mycloneEquipe(equipe);
@@ -79,6 +68,10 @@ export class EquipesService {
     myClone.ref = equipe.ref;
     myClone.libelle = equipe.libelle;
     myClone.chefEquipe = equipe.chefEquipe;
+    myClone.membres = new Array<MembreEquipe>();
+    equipe.membres.forEach(element => {
+      myClone.membres.push(element);
+    });
     return myClone;
   }
   private cloneMembre(membre: MembreEquipe) {
@@ -88,6 +81,5 @@ export class EquipesService {
     myCloneMembre.prenom = membre.prenom;
     myCloneMembre.phone = membre.phone;
     return myCloneMembre;
-
   }
 }

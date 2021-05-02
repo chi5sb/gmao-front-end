@@ -14,10 +14,6 @@ export class EquipeListComponent implements OnInit {
   get equipes(): Array<Equipe> {
     return this.equipeService.equipes;
   }
-
-  creerEquipe(){
-    this.equipeService.creerEquipe();
-  }
   public delete(index: number){
     this.equipes.splice(index, 1);
 }
