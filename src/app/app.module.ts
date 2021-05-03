@@ -27,6 +27,9 @@ import {StockListComponent} from './stock/stock-list/stock-list.component';
 import {StockCreateComponent} from './stock/stock-create/stock-create.component';
 import {StockComponent} from './stock/stock.component';
 import {HttpClientModule} from '@angular/common/http';
+import { InterventionComponent } from './intervention/intervention.component';
+import { InterventionCreateComponent } from './intervention/intervention-create/intervention-create.component';
+import { InterventionListComponent } from './intervention/intervention-list/intervention-list.component';
 
 
 @NgModule({
@@ -43,7 +46,10 @@ import {HttpClientModule} from '@angular/common/http';
     EquipeListComponent,
     StockComponent,
     StockCreateComponent,
-    StockListComponent
+    StockListComponent,
+    InterventionComponent,
+    InterventionCreateComponent,
+    InterventionListComponent
   ],
   imports: [
     BrowserModule,

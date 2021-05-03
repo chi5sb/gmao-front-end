@@ -27,6 +27,9 @@
         <a routerLink="stock" routerLinkActive="active" mat-button
         >Stock</a
         >
+        <a routerLink="intervention" routerLinkActive="active" mat-button
+        >Intervention</a
+        >
       </div>
     </mat-toolbar-row>
   </mat-toolbar>
@@ -68,6 +71,13 @@
           mat-list-item
           (click)="sidenav.toggle()"
           >Chef-Equipe</a
+        >
+        <a
+          routerLink="intervention"
+          routerLinkActive="active"
+          mat-list-item
+          (click)="sidenav.toggle()"
+        >intervention</a
         >
       </mat-nav-list>
     </mat-sidenav>
