@@ -100,7 +100,7 @@ export class EquipesService {
   public findByEquipeRef(equipe: Equipe){
     this.equipeSelect = equipe;
     if ( this.equipeSelect != null) {
-      this.http.get<Array<MembreEquipe>>(this.urlEquipe + '/equipe/ref/' + equipe.ref).subscribe(
+      this.http.get<Array<MembreEquipe>>(this.urlEquipe + 'equipe/ref/' + equipe.ref).subscribe(
         data => {
           this.equipeSelect.membres = data;
         }, error => {

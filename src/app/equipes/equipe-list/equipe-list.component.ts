@@ -25,4 +25,7 @@ export class EquipeListComponent implements OnInit {
   get equipeSelect(): Equipe {
     return  this.equipeService.equipeSelect;
   }
+  public findByEquipeRef(equipe: Equipe){
+    this.equipeService.findByEquipeRef(equipe);
+}
 }
