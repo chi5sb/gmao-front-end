@@ -13,6 +13,7 @@ export class EquipesService {
   private urlbase = 'http://localhost:8036';
   private url = 'http://localhost:8036/equipe/';
   private urlEquipe = 'http://localhost:8036/membreEquipe/';
+  private urlEquipeRef = 'http://localhost:8036/membreEquipe/equipe/ref/'
   public _equipe: Equipe; 
   public _equipes : Array<Equipe>;
   public _membre : MembreEquipe;
@@ -82,6 +83,8 @@ export class EquipesService {
         data => {
           if (data > 0){
             this.equipes.push(this.mycloneEquipe(this.equipe));
+            
+          
           }else {
             alert('error lors de la création d equipe : ' + data);
           }
@@ -89,18 +92,22 @@ export class EquipesService {
       );
       this.equipe.id = this.equipes.length + 1;
       this.equipes.push(this.mycloneEquipe(this.equipe));
+      this.equipe = new Equipe();
+     
 
     }else {
       this.equipes[this._index] = this.mycloneEquipe(this.equipe);
     }
   }
   public addMembres() {
+    this.membre.id = this.equipe.membres.length + 1;
     this.equipe.membres.push(this.cloneMembre(this.membre));
+    this.membre = new MembreEquipe();
   }
   public findByEquipeRef(equipe: Equipe){
     this.equipeSelect = equipe;
     if ( this.equipeSelect != null) {
-      this.http.get<Array<MembreEquipe>>(this.urlEquipe + 'equipe/ref/' + equipe.ref).subscribe(
+      this.http.get<Array<MembreEquipe>>(this.urlEquipeRef + equipe.ref).subscribe(
         data => {
           this.equipeSelect.membres = data;
         }, error => {
@@ -128,7 +135,6 @@ export class EquipesService {
   private cloneMembre(membre: MembreEquipe) {
     const myCloneMembre = new MembreEquipe();
     myCloneMembre.id = membre.id;
-    myCloneMembre.codeCollaborateur = membre.codeCollaborateur;
     myCloneMembre.fullname = membre.fullname;
     myCloneMembre.phone = membre.phone;
     return myCloneMembre;

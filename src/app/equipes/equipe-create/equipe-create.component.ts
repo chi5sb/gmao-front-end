@@ -17,6 +17,10 @@ export class EquipeCreateComponent implements OnInit {
   get equipe(): Equipe {
     return this.equipeService.equipe;
   }
+  public deleteColl(index: number){
+    this.equipe.membres.splice(index, 1);
+  }
+ 
   get membre(): MembreEquipe {
     return this.equipeService.membre;
   }

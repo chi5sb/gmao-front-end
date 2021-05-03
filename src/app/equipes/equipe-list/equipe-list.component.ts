@@ -14,8 +14,14 @@ export class EquipeListComponent implements OnInit {
   get equipes(): Array<Equipe> {
     return this.equipeService.equipes;
   }
+  get equipe(): Equipe {
+    return this.equipeService.equipe;
+  }
   public delete(index: number){
     this.equipes.splice(index, 1);
+}
+public deleteColl(index: number){
+  this.equipeSelect.membres.splice(index, 1);
 }
   public update(index: number, equipe: Equipe){
     this.equipeService.update(index, equipe);
@@ -24,6 +30,9 @@ export class EquipeListComponent implements OnInit {
   }
   get equipeSelect(): Equipe {
     return  this.equipeService.equipeSelect;
+  }
+  search(referenceMagasin: string, referenceMaterial: string) {
+
   }
   public findByEquipeRef(equipe: Equipe){
     this.equipeService.findByEquipeRef(equipe);

@@ -2,8 +2,9 @@
   <app-equipe-create></app-equipe-create>
   <div class="row">
     <div class="col-lg-6">
+      
       <div class="card">
-        <div class="card-header">Equipes</div>
+        <div class="card-header" style="font-family: monospace; color: #3f51b5; font-weight: bold;">Equipes</div>
         <div class="card-body">
           <table class="table">
             <tr>
@@ -21,12 +22,12 @@
                 <td>{{ c.chefEquipe.id }}</td>
                 <td>
                   <span (click)="delete(i)"
-                    ><i class="fa fa-trash btn btn-outline-danger"></i
+                    ><i class="fa fa-trash btn   btn-sm btn-outline-danger"></i
                   ></span>
                   <span (click)="update(i, c)"
-                    ><i class="fa fa-edit btn btn-outline-info"></i
+                    ><i class="fa fa-edit btn   btn-sm btn-outline-info"></i
                   ></span>
-                  <button class="btn  btn-sm btn-outline-danger btn-trash "(click)="findByEquipeRef(c)"><i class="fa fa-plus"></i></button>
+                  <button class="btn  btn-sm btn-outline-warning btn-trash "(click)="findByEquipeRef(c)"><i class="fa fa-plus"></i></button>
                 </td>
               </tr>
             </tbody>
@@ -36,7 +37,7 @@
     </div>
     <div class="col-lg-6">
       <div class="card">
-        <div class="card-header">les Collaborateures d'equipe {{equipeSelect.ref}}</div>
+        <div class="card-header " style="font-family: monospace; color: #3f51b5; font-weight: bold;">les membres d'equipe {{equipeSelect.ref}}</div>
         <div class="card-body">
           <table class="membres">
             <tr>
@@ -47,9 +48,10 @@
             </tr>
             <tbody>
               <tr *ngFor="let c of equipeSelect.membres ">
-                <td bgcolor="#f5f5dc">{{c.codeCollaborateur}}</td>
+                
                 <td bgcolor="#fffaf0">{{c.fullname}}</td>
                 <td bgcolor="yellow">{{c.phone}}</td>
+               
               </tr>
               </tbody>
           </table>
