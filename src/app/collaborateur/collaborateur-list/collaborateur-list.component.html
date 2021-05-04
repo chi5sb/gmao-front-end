@@ -1,1 +1,16 @@
-<p>collaborateur-list works!</p>
+<div class="card">
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        <th>Nom Complet</th>
+        <th>Code Collaborateur</th>
+      </thead>
+      <tbody>
+        <tr *ngFor="let c of collaborateurs">
+          <td>{{ c.fullname }}</td>
+          <td>{{ c.codeCollaborateur }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

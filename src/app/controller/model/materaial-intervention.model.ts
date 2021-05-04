@@ -2,6 +2,7 @@ import { Intervention } from './intervention.model';
 import { Collaborateur } from './collaborateur.model';
 import { Magasin } from './magasin.model';
 import { Material } from './material.model';
+
 export class MateraialIntervention {
   public id: number;
   public material = new Material();

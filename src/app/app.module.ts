@@ -33,6 +33,8 @@ import { InterventionListComponent } from './intervention/intervention-list/inte
 import { CollaborateurCreateComponent } from './collaborateur/collaborateur-create/collaborateur-create.component';
 import { CollaborateurListComponent } from './collaborateur/collaborateur-list/collaborateur-list.component';
 import { InterventionInfoComponent } from './intervention/intervention-info/intervention-info.component';
+import { MembreEquipeComponent } from './membre-equipe/membre-equipe.component';
+import { InterventionConsielComponent } from './intervention/intervention-consiel/intervention-consiel.component';
 
 
 @NgModule({
@@ -55,7 +57,9 @@ import { InterventionInfoComponent } from './intervention/intervention-info/inte
     InterventionListComponent,
     CollaborateurCreateComponent,
     CollaborateurListComponent,
-    InterventionInfoComponent
+    InterventionInfoComponent,
+    MembreEquipeComponent,
+    InterventionConsielComponent
   ],
   imports: [
     BrowserModule,
