@@ -1,7 +1,6 @@
 export class MembreEquipe {
  public id : number;
- public nom : string;
- public prenom : string;
+ public fullname : string;
  public email : string;
  public username : string;
  public password : string;

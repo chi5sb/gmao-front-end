@@ -27,7 +27,12 @@ import {StockListComponent} from './stock/stock-list/stock-list.component';
 import {StockCreateComponent} from './stock/stock-create/stock-create.component';
 import {StockComponent} from './stock/stock.component';
 import {HttpClientModule} from '@angular/common/http';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { InterventionComponent } from './intervention/intervention.component';
+import { InterventionCreateComponent } from './intervention/intervention-create/intervention-create.component';
+import { InterventionListComponent } from './intervention/intervention-list/intervention-list.component';
+import { CollaborateurCreateComponent } from './collaborateur/collaborateur-create/collaborateur-create.component';
+import { CollaborateurListComponent } from './collaborateur/collaborateur-list/collaborateur-list.component';
+import { InterventionInfoComponent } from './intervention/intervention-info/intervention-info.component';
 
 
 @NgModule({
@@ -44,11 +49,16 @@ import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
     EquipeListComponent,
     StockComponent,
     StockCreateComponent,
-    StockListComponent
+    StockListComponent,
+    InterventionComponent,
+    InterventionCreateComponent,
+    InterventionListComponent,
+    CollaborateurCreateComponent,
+    CollaborateurListComponent,
+    InterventionInfoComponent
   ],
   imports: [
     BrowserModule,
-    NgbModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
