@@ -43,32 +43,32 @@ export class StockService {
     if (this.stock.id == null) {
       this.http.post(this.urlBase + this.url + '/', this.stock).subscribe(
         data => {
-          if(data===1){
+          if (data === 1){
             this.findAll();
           }
-          if(data ===-2) {
+          if (data === -2) {
             alert('donner une valeur deja existante ');
           }
-          if(data===2){
+          if (data === 2){
             this.findAll();
           }
-        },error => alert('error 404')
+        }, error => alert('error 404')
       );
     }
     else{
-      let stocke = new Stock();
-      stocke.qte=this.stock.qte-this.stocks[this._index].qte;
-      stocke.id=this.stock.id;
-      stocke.material.reference=this.stock.material.reference;
-      stocke.magasin.reference=this.stock.magasin.reference;
+      const stocke = new Stock();
+      stocke.qte = this.stock.qte - this.stocks[this._index].qte;
+      stocke.id = this.stock.id;
+      stocke.material.reference = this.stock.material.reference;
+      stocke.magasin.reference = this.stock.magasin.reference;
       this.http.post(this.urlBase + this.url + '/', stocke).subscribe(
-        data=>{
+        data => {
           console.log(data);
         }
       );
       this.stocks[this._index] = this.clone(this.stock);
     }
-    this.stock=null;
+    this.stock = null;
   }
 
    findAll() {
@@ -88,13 +88,7 @@ export class StockService {
     myClone.magasin.reference = stock.magasin.reference;
     return myClone;
   }
+  deleteByRefMagAndRefMat(referenceMag: string, referenceMat: string) {
 
-  download() {
-    this.http.get<Resource>(this.urlBase + this.url +'/download').subscribe(
-      data=>{
-        console.log('h');
-      }
-
-    );
   }
 }

@@ -7,7 +7,9 @@ input{
   margin-top: 15px;
   margin-left: 15px;
   margin-right: 15px;
-
+}
+input:focus{
+  border-color:#3f51b5 ;
 }
 label{
   font-family: Consolas;

@@ -2,6 +2,8 @@
   <div class="card-header">
     <h1>Stocks</h1>
   <div class="card-body">
+    <div class="row">
+      <div class="col-md-6">
     <div class="pointerCursor" (click)="panelExpanded = !panelExpanded">
       <h3>Create</h3>
 
@@ -11,7 +13,7 @@
     </div>
   </div>
 
-<div class="card-body">
+<div class="col-md-4">
   <div class="pointerCursor" (click)="panelExpande = !panelExpande">
     <h3>Filtre</h3>
   </div>
@@ -23,6 +25,8 @@
       </div></div>
   </div>
 </div>
+  </div>
+  </div>
   <div class="card-body">
       <h3>liste</h3>
     <app-stock-list></app-stock-list>

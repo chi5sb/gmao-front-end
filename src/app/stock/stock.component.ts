@@ -68,4 +68,5 @@ export class StockComponent implements OnInit {
       fs.saveAs(blob, 'Stocks.xlsx');
     });
   }
+
 }

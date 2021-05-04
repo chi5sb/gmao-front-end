@@ -27,6 +27,7 @@ import {StockListComponent} from './stock/stock-list/stock-list.component';
 import {StockCreateComponent} from './stock/stock-create/stock-create.component';
 import {StockComponent} from './stock/stock.component';
 import {HttpClientModule} from '@angular/common/http';
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 
 
 @NgModule({
@@ -47,6 +48,7 @@ import {HttpClientModule} from '@angular/common/http';
   ],
   imports: [
     BrowserModule,
+    NgbModule,
     AppRoutingModule,
     BrowserAnimationsModule,
     MaterialModule,
