@@ -1,0 +1,40 @@
+<div class="card">
+  <div class="card-body">
+    <div class="form-group">
+      <label style="color: #3f51b5; font-weight: bold" for="nom"
+        >Nom et Prénom</label
+      >
+      <input
+        [(ngModel)]="membre.fullname"
+        type="text"
+        name="nom"
+        class="form-control"
+      />
+      <label style="color: #3f51b5; font-weight: bold" for="tele"
+        >Telephone</label
+      ><input
+        [(ngModel)]="membre.phone"
+        type="text"
+        name="tele"
+        class="form-control"
+      />
+      <label style="color: #3f51b5; font-weight: bold" for="email">Email</label>
+      <input
+        [(ngModel)]="membre.email"
+        type="text"
+        name="email"
+        class="form-control"
+      />
+    </div>
+    <div class="card-footer">
+      <button
+        class="but btn-block btn-outline-success"
+        mat-raised-button
+        color="primary"
+        (click)="addMembres()"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</div>

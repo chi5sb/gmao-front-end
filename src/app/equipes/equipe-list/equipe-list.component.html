@@ -2,9 +2,13 @@
   <app-equipe-create></app-equipe-create>
   <div class="row">
     <div class="col-lg-6">
-      
       <div class="card">
-        <div class="card-header" style="font-family: monospace; color: #3f51b5; font-weight: bold;">Equipes</div>
+        <div
+          class="card-header"
+          style="font-family: monospace; color: #3f51b5; font-weight: bold"
+        >
+          Equipes
+        </div>
         <div class="card-body">
           <table class="table">
             <tr>
@@ -22,12 +26,17 @@
                 <td>{{ c.chefEquipe.id }}</td>
                 <td>
                   <span (click)="delete(i)"
-                    ><i class="fa fa-trash btn   btn-sm btn-outline-danger"></i
+                    ><i class="fa fa-trash btn btn-sm btn-outline-danger"></i
                   ></span>
                   <span (click)="update(i, c)"
-                    ><i class="fa fa-edit btn   btn-sm btn-outline-info"></i
+                    ><i class="fa fa-edit btn btn-sm btn-outline-info"></i
                   ></span>
-                  <button class="btn  btn-sm btn-outline-warning btn-trash "(click)="findByEquipeRef(c)"><i class="fa fa-plus"></i></button>
+                  <button
+                    class="btn btn-sm btn-outline-warning btn-trash"
+                    (click)="findByEquipeRef(c)"
+                  >
+                    <i class="fa fa-plus"></i>
+                  </button>
                 </td>
               </tr>
             </tbody>
@@ -37,23 +46,28 @@
     </div>
     <div class="col-lg-6">
       <div class="card">
-        <div class="card-header " style="font-family: monospace; color: #3f51b5; font-weight: bold;">les membres d'equipe {{equipeSelect.ref}}</div>
+        <div
+          class="card-header"
+          style="font-family: monospace; color: #3f51b5; font-weight: bold"
+        >
+          les membres d'equipe {{ equipeSelect.ref }}
+        </div>
         <div class="card-body">
           <table class="membres">
             <tr>
               <th style="background-color: #3f51b5; color: white">id</th>
-              <th style="background-color: #3f51b5; color: white">Nom et Prénom</th>
+              <th style="background-color: #3f51b5; color: white">
+                Nom et Prénom
+              </th>
               <th style="background-color: #3f51b5; color: white">Téléphone</th>
               <th style="background-color: #3f51b5; color: white">Actions</th>
             </tr>
             <tbody>
-              <tr *ngFor="let c of equipeSelect.membres ">
-                
-                <td bgcolor="#fffaf0">{{c.fullname}}</td>
-                <td bgcolor="yellow">{{c.phone}}</td>
-               
+              <tr *ngFor="let c of equipeSelect.membres">
+                <td>{{ c.fullname }}</td>
+                <td>{{ c.phone }}</td>
               </tr>
-              </tbody>
+            </tbody>
           </table>
         </div>
       </div>

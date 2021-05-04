@@ -30,6 +30,9 @@ import {HttpClientModule} from '@angular/common/http';
 import { InterventionComponent } from './intervention/intervention.component';
 import { InterventionCreateComponent } from './intervention/intervention-create/intervention-create.component';
 import { InterventionListComponent } from './intervention/intervention-list/intervention-list.component';
+import { CollaborateurCreateComponent } from './collaborateur/collaborateur-create/collaborateur-create.component';
+import { CollaborateurListComponent } from './collaborateur/collaborateur-list/collaborateur-list.component';
+import { InterventionInfoComponent } from './intervention/intervention-info/intervention-info.component';
 
 
 @NgModule({
@@ -49,7 +52,10 @@ import { InterventionListComponent } from './intervention/intervention-list/inte
     StockListComponent,
     InterventionComponent,
     InterventionCreateComponent,
-    InterventionListComponent
+    InterventionListComponent,
+    CollaborateurCreateComponent,
+    CollaborateurListComponent,
+    InterventionInfoComponent
   ],
   imports: [
     BrowserModule,
