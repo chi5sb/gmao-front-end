@@ -1,15 +1,16 @@
+import { Intervention } from './../../controller/model/intervention.model';
+import { InterventionService } from './../../controller/service/intervention.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-intervention-create',
   templateUrl: './intervention-create.component.html',
-  styleUrls: ['./intervention-create.component.css']
+  styleUrls: ['./intervention-create.component.css'],
 })
 export class InterventionCreateComponent implements OnInit {
-
-  constructor() { }
-
-  ngOnInit(): void {
+  constructor(private interventionService: InterventionService) {}
+  ngOnInit(): void {}
+  get intervention(): Intervention {
+    return this.interventionService.intervention;
   }
-
 }

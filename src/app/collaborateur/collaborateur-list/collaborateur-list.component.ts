@@ -1,21 +1,20 @@
-import { MembreEquipe } from './../../controller/model/membre-equipe.model';
-import { EquipesService } from './../../controller/service/equipes.service';
+import { Collaborateur } from './../../controller/model/collaborateur.model';
+import { CollaborateurService } from './../../controller/service/collaborateur.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-collaborateur-list',
   templateUrl: './collaborateur-list.component.html',
-  styleUrls: ['./collaborateur-list.component.css']
+  styleUrls: ['./collaborateur-list.component.css'],
 })
 export class CollaborateurListComponent implements OnInit {
+  constructor(private collaborateurService: CollaborateurService) {}
 
-  constructor(private equipesService:EquipesService) { }
-
-  get membre(): MembreEquipe {
-    return this.equipesService.membre;
+  get collaborateurs(): Array<Collaborateur> {
+    return this.collaborateurService.collaborateurs;
   }
 
   ngOnInit(): void {
+    this.collaborateurService.findAll();
   }
-
 }
