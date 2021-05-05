@@ -43,4 +43,15 @@ export class CollaborateurService {
   set collaborateurs(value: Array<Collaborateur>) {
     this._collaborateurs = value;
   }
+
+  //   addCollaborateur(collaborateur: Collaborateur) {
+  //     this.http.post(this.urlBase + '/', collaborateur).subscribe(
+  //       (data) => {
+  //         if (data == 1) {
+
+  //         }
+  //       },
+  //       (error) => {}
+  //     );
+  //   }
 }
