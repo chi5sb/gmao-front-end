@@ -10,7 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class InterventionCreateComponent implements OnInit {
   constructor(private interventionService: InterventionService) {}
   ngOnInit(): void {}
+
+  modeVue = '';
+
   get intervention(): Intervention {
     return this.interventionService.intervention;
+  }
+
+  changeVue(vue: string) {
+    this.modeVue = vue;
   }
 }
