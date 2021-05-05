@@ -3,31 +3,19 @@
     <div class="col-lg-6">
       <mat-tab-group>
         <mat-tab label="Desc">
-          <app-intervention-info></app-intervention-info>
+          <app-intervention-info
+            (click)="this.changeVue('bla')"
+          ></app-intervention-info>
         </mat-tab>
         <mat-tab label="Collab">
-          <!-- <div class="card">
-            <div class="card-body">
-              <div class="form-group"><label for=""></label><input type="text" class="form-control"><label
-                for=""></label><input type="text" class="form-control"><label for=""></label><input type="text"
-                                                                                                       class="form-control">
-              </div>
-            </div>
-          </div> -->
-          <app-collaborateur-create></app-collaborateur-create>
+          <app-collaborateur-create
+            (click)="this.changeVue('Collab')"
+          ></app-collaborateur-create>
         </mat-tab>
         <mat-tab label="Stock">
-          <!-- <div class="card">
-            <div class="card-body">
-              <div class="form-group">
-                <label for=""></label
-                ><input type="text" class="form-control" /><label for=""></label
-                ><input type="text" class="form-control" /><label for=""></label
-                ><input type="text" class="form-control" />
-              </div>
-            </div>
-          </div> -->
-          <app-stock-create></app-stock-create>
+          <app-stock-create
+            (click)="this.changeVue('Stock')"
+          ></app-stock-create>
         </mat-tab>
         <mat-tab label="Conseil">
           <app-intervention-consiel></app-intervention-consiel>
@@ -35,19 +23,12 @@
       </mat-tab-group>
       <button class="btn btn-primary btn-block">Save</button>
     </div>
-    <div class="col-lg-6">
-      <table class="table">
-        <thead>
-          <th>Nom</th>
-          <th>Ref</th>
-          <th>Phone</th>
-          <th>Addresse</th>
-        </thead>
-        <tbody>
-          <!--  To Be Completed      -->
-        </tbody>
-      </table>
-      <app-collaborateur-list></app-collaborateur-list>
+    <div [ngSwitch]="modeVue" class="col-lg-6">
+      <app-collaborateur-list *ngSwitchCase="'Collab'"></app-collaborateur-list>
+      <app-stock-list *ngSwitchCase="'Stock'"></app-stock-list>
+      <div *ngSwitchDefault>
+        <app-intervention-list></app-intervention-list>
+      </div>
     </div>
   </div>
 </div>

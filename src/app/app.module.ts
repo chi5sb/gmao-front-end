@@ -11,8 +11,8 @@ import { AdministrateurComponent } from './administrateur/administrateur.compone
 import { HomeComponent } from './home/home.component';
 import { PageNotfoundComponent } from './page-notfound/page-notfound.component';
 import { FlexLayoutModule } from '@angular/flex-layout';
-import {MatIconModule} from '@angular/material/icon';
-import {MatListModule} from '@angular/material/list';
+import { MatIconModule } from '@angular/material/icon';
+import { MatListModule } from '@angular/material/list';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -23,10 +23,10 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatCardModule } from '@angular/material/card';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { FormsModule } from '@angular/forms';
-import {StockListComponent} from './stock/stock-list/stock-list.component';
-import {StockCreateComponent} from './stock/stock-create/stock-create.component';
-import {StockComponent} from './stock/stock.component';
-import {HttpClientModule} from '@angular/common/http';
+import { StockListComponent } from './stock/stock-list/stock-list.component';
+import { StockCreateComponent } from './stock/stock-create/stock-create.component';
+import { StockComponent } from './stock/stock.component';
+import { HttpClientModule } from '@angular/common/http';
 import { InterventionComponent } from './intervention/intervention.component';
 import { InterventionCreateComponent } from './intervention/intervention-create/intervention-create.component';
 import { InterventionListComponent } from './intervention/intervention-list/intervention-list.component';
@@ -35,7 +35,6 @@ import { CollaborateurListComponent } from './collaborateur/collaborateur-list/c
 import { InterventionInfoComponent } from './intervention/intervention-info/intervention-info.component';
 import { MembreEquipeComponent } from './membre-equipe/membre-equipe.component';
 import { InterventionConsielComponent } from './intervention/intervention-consiel/intervention-consiel.component';
-
 
 @NgModule({
   declarations: [
@@ -59,7 +58,7 @@ import { InterventionConsielComponent } from './intervention/intervention-consie
     CollaborateurListComponent,
     InterventionInfoComponent,
     MembreEquipeComponent,
-    InterventionConsielComponent
+    InterventionConsielComponent,
   ],
   imports: [
     BrowserModule,
@@ -77,10 +76,10 @@ import { InterventionConsielComponent } from './intervention/intervention-consie
     MatSnackBarModule,
     FormsModule,
     HttpClientModule,
-    MatSnackBarModule
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents : [EquipeCreateComponent]
+  entryComponents: [EquipeCreateComponent],
 })
-export class AppModule { }
+export class AppModule {}
