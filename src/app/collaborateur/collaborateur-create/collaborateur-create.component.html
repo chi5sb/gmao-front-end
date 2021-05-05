@@ -43,14 +43,22 @@
   <div class="card-body">
     <div class="form-group">
       <label for="">Nom Complet</label>
-      <input type="text" [(ngModel)]="collaborateur.fullname" class="form-control" />
+      <input
+        [(ngModel)]="collaborateur.collaborateur.fullname"
+        type="text"
+        class="form-control"
+      />
       <label for="">Code Collaborateur</label>
-      <input type="text" [(ngModel)]="collaborateur.codeCollaborateur" class="form-control" />
+      <input
+        [(ngModel)]="collaborateur.collaborateur.codeCollaborateur"
+        type="text"
+        class="form-control"
+      />
     </div>
   </div>
   <div class="card-footer">
     <div class="card-footer">
-      <button class="btn-block btn btn-primary">Ajouter</button>
+      <button class="btn-block btn btn-primary" (click)="saveCollaboraateur()">Ajouter</button>
     </div>
   </div>
 </div>

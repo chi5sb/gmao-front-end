@@ -2,17 +2,17 @@
   <div class="card-body">
     <div class="form-group">
       <label for="">Libelle</label>
-      <input type="text" class="form-control" />
-      <label for="">Description</label>
-      <input type="text" class="form-control" />
+      <input [(ngModel)]="intervention.libelle" type="text" class="form-control" />
+      <label  for="">Description</label>
+      <input [(ngModel)]="intervention.description" type="text" class="form-control" />
       <label for="">Date Debut</label>
-      <input type="text" class="form-control" />
+      <input [(ngModel)]="intervention.dateDebut" type="text" class="form-control"  />
       <label for="">Date Fin</label>
-      <input type="text" class="form-control" />
+      <input [(ngModel)]="intervention.dateFin" type="text" class="form-control" />
       <label for="">Date Probleme</label>
-      <input type="text" class="form-control" />
+      <input [(ngModel)]="intervention.dateDeProbleme" type="text" class="form-control" />
       <label for="">Etat</label>
-      <input type="text" class="form-control" />
+      <input [(ngModel)]="intervention.etatIntervention.code" type="text" class="form-control" />
     </div>
   </div>
 </div>

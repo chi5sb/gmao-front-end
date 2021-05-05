@@ -15,6 +15,7 @@ export class StockService {
   private urlBase = 'http://localhost:8036';
   private url = '/Stock-api/Stockage';
   private _index: number;
+
   get stock(): Stock {
     if (this._stock == null) {
       this._stock = new Stock();
