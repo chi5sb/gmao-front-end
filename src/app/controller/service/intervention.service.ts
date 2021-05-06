@@ -5,6 +5,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Intervention } from './../model/intervention.model';
 import {Collaborateur} from '../model/collaborateur.model';
+import {StockService} from "./stock-service.service";
 
 @Injectable({
   providedIn: 'root',
@@ -12,7 +13,7 @@ import {Collaborateur} from '../model/collaborateur.model';
 export class InterventionService {
 
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient,private stockService: StockService) {}
   public _intervention: Intervention;
   public _interventions: Array<Intervention>;
   private _collaborateurs = this.intervention.interventionCollaborateur;
@@ -22,9 +23,8 @@ export class InterventionService {
   private _materialIntervention : MateraialIntervention;
 
 
-
-  get materialInterventions(): MateraialIntervention[] {
-    if ( this._materialInterventions = null){
+  get materialInterventions(): Array<MateraialIntervention> {
+    if ( this._materialInterventions == null){
       this._materialInterventions = new Array<MateraialIntervention>();
     }
     return this._materialInterventions;
@@ -35,7 +35,7 @@ export class InterventionService {
   }
 
   get materialIntervention(): MateraialIntervention {
-    if ( this._materialIntervention = null){
+    if ( this._materialIntervention == null){
       this._materialIntervention = new MateraialIntervention();
     }
     return this._materialIntervention;
@@ -117,11 +117,16 @@ export class InterventionService {
   saveCollaboraateur() {
     this.collaborateur.intervention = this.intervention;
     this.collaborateurs.push(this._collaborateur);
+    this._codeCollaborateur=this.collaborateur.collaborateur.codeCollaborateur;
     console.log(this._collaborateurs)
     this._collaborateur = null;
   }
   saveStock(){
-   return null;
+    this.materialIntervention.intervention = this.intervention;
+    this.materialIntervention.collaborateur.codeCollaborateur=this._codeCollaborateur;
+    this.materialInterventions.push(this._materialIntervention);
+    this.stockService.stock = null;
+    console.log(this._materialInterventions)
     // this.materialIntervention.push(this.materialIntervention);
 
   }
