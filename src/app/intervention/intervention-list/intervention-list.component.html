@@ -1,7 +1,7 @@
-    
+
 
 <h1 id="title" class="jumbotron p-5"  >interventions</h1>
-    
+
 
 <form id="search" class="form-inline my-0 my-lg-3">
   <input class="form-control mr-sm-3" type="search" placeholder="Search" >
@@ -28,8 +28,8 @@
               <th style="background-color: #3f51b5; color: white">dateDebut</th>
               <th style="background-color: #3f51b5; color: white">dateFin</th>
               <th style="background-color: #3f51b5; color: white">libelle</th>
-              <th style="background-color: #3f51b5; color: white">collaborateur</th>
-              
+
+
               <th style="background-color: #3f51b5; color: white">Action</th>
             </tr>
             <tbody>
@@ -41,7 +41,6 @@
                   <td>{{ c.dateDebut }}</td>
                   <td>{{ c.dateFin }}</td>
                   <td>{{ c.libelle}}</td>
-                  <td>{{ c.fullname}}</td>
                   <td><span (click)="delete(i,c)"><i class="fa fa-trash btn btn-warning"></i> </span> <span (click)="update(i,c)"><i class="fa fa-edit ml-1 btn btn-info"></i> </span> </td>
 
             </tbody>
@@ -72,14 +71,14 @@
             <th style="background-color: #3f51b5; color: white">Action</th>
           </tr>
           <tbody>
-            
-             
+
+
           </tbody>
         </table>
 
       </div>
     </div>
-  
+
   </div>
   </div>
 </div>

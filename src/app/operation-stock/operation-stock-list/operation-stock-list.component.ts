@@ -46,4 +46,5 @@ export class OperationStockListComponent implements OnInit {
   find(reference: String) {
     this.operationStockservice.find(reference);
   }
+
 }

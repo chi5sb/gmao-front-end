@@ -10,7 +10,9 @@ import { Component, OnInit } from '@angular/core';
 export class InterventionListComponent implements OnInit {
   constructor(private interventionService: InterventionService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.interventionService.findAll();
+  }
 
   get interventions(): Array<Intervention> {
     return this.interventionService.interventions;

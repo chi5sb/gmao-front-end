@@ -86,4 +86,8 @@ export class OperationstockService {
       }
       );
   }
+
+  // findByCritere(qteMax: number, qteMin: number) {
+  //   this.http.post<Array<OperationStock>>(this.urlBase+this.url+'/criteria',qte)
+  // }
 }

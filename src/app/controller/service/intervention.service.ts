@@ -200,9 +200,9 @@ export class InterventionService {
   public findAll(){
     this.http.get<Array<Intervention>>(this.urlBase + '/').subscribe(
       data => {
-        this.interventions = data ;
-      }, error => {
-        console.log(error); }
+        this.interventions = data ;}
+      // }, error => {
+      //   console.log(error); }
     );
   }
 }

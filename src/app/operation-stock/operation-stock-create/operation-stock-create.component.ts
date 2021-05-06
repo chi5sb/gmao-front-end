@@ -8,7 +8,8 @@ import {OperationStock} from '../../controller/model/operationStock.model';
   styleUrls: ['./operation-stock-create.component.css']
 })
 export class OperationStockCreateComponent implements OnInit {
-
+  qteMin: number;
+  qteMax:number;
   constructor(private operationStockservice: OperationstockService) { }
 
   ngOnInit(): void {
@@ -25,5 +26,9 @@ export class OperationStockCreateComponent implements OnInit {
   save() {
     this.operationStockservice.save();
 
+  }
+
+  findbyCritere(qteMax: number, qteMin: number) {
+    // this.operationStockservice.findByCritere(qteMax,qteMin);
   }
 }
