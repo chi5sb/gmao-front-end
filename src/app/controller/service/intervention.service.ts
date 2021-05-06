@@ -6,6 +6,7 @@ import { Injectable } from '@angular/core';
 import { Intervention } from './../model/intervention.model';
 import {Collaborateur} from '../model/collaborateur.model';
 import {StockService} from "./stock-service.service";
+import {Conseils} from "../model/conseils.model";
 
 @Injectable({
   providedIn: 'root',
@@ -21,7 +22,32 @@ export class InterventionService {
   private _codeCollaborateur = this.collaborateur.collaborateur.codeCollaborateur;
   private _materialInterventions = this.intervention.materaialInterventions;
   private _materialIntervention : MateraialIntervention;
+  private _conseilIntervention : Conseils;
+  private _conseilInterventions : Array<Conseils>;
 
+
+  get conseilIntervention(): Conseils {
+    if(this._conseilIntervention==null){
+      this._conseilIntervention = new Conseils();
+    }
+    return this._conseilIntervention;
+  }
+
+  set conseilIntervention(value: Conseils) {
+    this._conseilIntervention = value;
+  }
+
+  get conseilInterventions(): Array<Conseils> {
+    if(this._conseilInterventions==null){
+      this._conseilInterventions = new Array<Conseils>();
+    }
+
+    return this._conseilInterventions;
+  }
+
+  set conseilInterventions(value: Array<Conseils>) {
+    this._conseilInterventions = value;
+  }
 
   get materialInterventions(): Array<MateraialIntervention> {
     if ( this._materialInterventions == null){
@@ -130,7 +156,12 @@ export class InterventionService {
     // this.materialIntervention.push(this.materialIntervention);
 
   }
-  // save(intervention: Intervention){
+  saveConseil(){
+    this.conseilIntervention.intervention=this.intervention;
+    this.conseilIntervention.collaborateur.codeCollaborateur=this._codeCollaborateur;
+    this.conseilInterventions.push(this._conseilIntervention);
+    this._conseilIntervention=null;
+    console.log(this._conseilInterventions)
 
-  // };
+  };
 }

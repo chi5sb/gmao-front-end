@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {InterventionService} from '../../controller/service/intervention.service';
+import {Conseils} from '../../controller/model/conseils.model';
 
 @Component({
   selector: 'app-intervention-consiel',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterventionConsielComponent implements OnInit {
 
-  constructor() { }
+  constructor(private interventionService: InterventionService) { }
 
   ngOnInit(): void {
   }
 
+  get conseilIntervention(): Conseils {
+    return this.interventionService.conseilIntervention;
+  }
+
+  ajouter() {
+    this.interventionService.saveConseil();
+  }
 }

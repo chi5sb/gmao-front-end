@@ -1,6 +1,7 @@
 import { InterventionCollaborateur } from './intervention-collaborateur.model';
 import { EtatIntervention } from './etat-intervention.model';
 import { MateraialIntervention } from './materaial-intervention.model';
+import {Conseils} from './conseils.model';
 
 export class Intervention {
   public id: number;
@@ -13,4 +14,5 @@ export class Intervention {
   public etatIntervention = new EtatIntervention();
   public interventionCollaborateur = new Array<InterventionCollaborateur>();
   public materaialInterventions = new Array<MateraialIntervention>();
+  public  conseils = new Array<Conseils>();
 }
