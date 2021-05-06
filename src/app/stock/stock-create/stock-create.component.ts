@@ -36,13 +36,14 @@ export class StockCreateComponent implements OnInit {
   }
 
   evaluate() {
-    if (this.intervention.libelle == null){
+    if (this.intervention.code == null){
       this.Save();
     }
     else {
       const materialintervention = new MateraialIntervention();
       materialintervention.material = this.stock.material;
       materialintervention.magasin = this.stock.magasin;
+      materialintervention.qte =this.stock.qte;
       this.interventionService.materialIntervention = materialintervention;
       this.interventionService.saveStock();
     }

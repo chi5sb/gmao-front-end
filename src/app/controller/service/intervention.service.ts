@@ -7,6 +7,7 @@ import { Intervention } from './../model/intervention.model';
 import {Collaborateur} from '../model/collaborateur.model';
 import {StockService} from "./stock-service.service";
 import {Conseils} from "../model/conseils.model";
+import {any} from "codelyzer/util/function";
 
 @Injectable({
   providedIn: 'root',
@@ -24,6 +25,7 @@ export class InterventionService {
   private _materialIntervention : MateraialIntervention;
   private _conseilIntervention : Conseils;
   private _conseilInterventions : Array<Conseils>;
+  private urlBase:string ="http://localhost:8036/Intervention-api/intervention";
 
 
   get conseilIntervention(): Conseils {
@@ -162,6 +164,33 @@ export class InterventionService {
     this.conseilInterventions.push(this._conseilIntervention);
     this._conseilIntervention=null;
     console.log(this._conseilInterventions)
-
   };
+   getCircularReplacer = () => {
+    const seen = new WeakSet();
+    return (key, value) => {
+      if (typeof value === "object" && value !== null) {
+        if (seen.has(value)) {
+          return;
+        }
+        seen.add(value);
+      }
+      return value;
+    };
+  };
+
+  // JSON.stringify(circularReference, getCircularReplacer());
+  saveIntervention() {
+    let stringifi=JSON.stringify(this.intervention, this.getCircularReplacer());
+
+    this.http.post(this.urlBase+'/',JSON.parse(stringifi)).subscribe(
+      data=>{
+        if(data<0) {
+          alert('one of the reference are not available');
+        }
+          else{
+            console.log('success');
+          }
+      }
+    );
+  }
 }

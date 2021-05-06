@@ -20,4 +20,8 @@ export class InterventionCreateComponent implements OnInit {
   changeVue(vue: string) {
     this.modeVue = vue;
   }
+
+  save() {
+    this.interventionService.saveIntervention();
+  }
 }
