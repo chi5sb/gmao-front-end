@@ -35,7 +35,7 @@ import { CollaborateurListComponent } from './collaborateur/collaborateur-list/c
 import { InterventionInfoComponent } from './intervention/intervention-info/intervention-info.component';
 import { MembreEquipeComponent } from './membre-equipe/membre-equipe.component';
 import { InterventionConsielComponent } from './intervention/intervention-consiel/intervention-consiel.component';
-
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -77,6 +77,7 @@ import { InterventionConsielComponent } from './intervention/intervention-consie
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
