@@ -40,6 +40,7 @@ import {OperationStockListComponent} from './operation-stock/operation-stock-lis
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 
 
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -84,6 +85,7 @@ import {OperationStockComponent} from './operation-stock/operation-stock.compone
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

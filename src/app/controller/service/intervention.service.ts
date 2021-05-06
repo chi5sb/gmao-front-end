@@ -26,7 +26,7 @@ export class InterventionService {
   private _conseilIntervention : Conseils;
   private _conseilInterventions : Array<Conseils>;
   private urlBase:string ="http://localhost:8036/Intervention-api/intervention";
-
+  private _index: number;
 
   get conseilIntervention(): Conseils {
     if(this._conseilIntervention==null){
@@ -191,6 +191,18 @@ export class InterventionService {
             console.log('success');
           }
       }
+    );
+  }
+  public update(index: number, intervention: Intervention) {
+    this.intervention = this.intervention;
+    this._index = index;
+  }
+  public findAll(){
+    this.http.get<Array<Intervention>>(this.urlBase + '/').subscribe(
+      data => {
+        this.interventions = data ;
+      }, error => {
+        console.log(error); }
     );
   }
 }
