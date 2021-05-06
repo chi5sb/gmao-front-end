@@ -1,23 +1,22 @@
+import { OperationstockService } from './../../controller/service/operationstock.service';
 import { Component, OnInit } from '@angular/core';
-import {OperationstockService} from '../../Controller/Service/operationstock.service';
-import {OperationStock} from '../../controller/model/operationStock.model';
+// import { OperationstockService } from '../../Controller/Service/operationstock.service';
+import { OperationStock } from '../../controller/model/operationStock.model';
 
 @Component({
   selector: 'app-operation-stock-create',
   templateUrl: './operation-stock-create.component.html',
-  styleUrls: ['./operation-stock-create.component.css']
+  styleUrls: ['./operation-stock-create.component.css'],
 })
 export class OperationStockCreateComponent implements OnInit {
   qteMin: number;
-  qteMax:number;
-  constructor(private operationStockservice: OperationstockService) { }
+  qteMax: number;
+  constructor(private operationStockservice: OperationstockService) {}
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {}
 
   get operationstocks(): Array<OperationStock> {
-
-    return  this.operationStockservice.operationstocks;
+    return this.operationStockservice.operationstocks;
   }
   get operationstock(): OperationStock {
     return this.operationStockservice.operationstock;
@@ -25,7 +24,6 @@ export class OperationStockCreateComponent implements OnInit {
 
   save() {
     this.operationStockservice.save();
-
   }
 
   findbyCritere(qteMax: number, qteMin: number) {
