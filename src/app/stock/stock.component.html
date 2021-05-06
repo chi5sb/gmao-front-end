@@ -1,11 +1,11 @@
 <div class="card">
   <div class="card-header">
-    <h1>Stocks</h1>
+    <h1 style="color: deepskyblue; font-weight: bold;">Stocks</h1>
   <div class="card-body">
     <div class="row">
       <div class="col-md-6">
     <div class="pointerCursor" (click)="panelExpanded = !panelExpanded">
-      <h3>Create</h3>
+      <h3 class="btn">Create</h3>
 
     </div>
     <div class="panel-body" *ngIf="panelExpanded">
@@ -15,20 +15,20 @@
 
 <div class="col-md-4">
   <div class="pointerCursor" (click)="panelExpande = !panelExpande">
-    <h3>Filtre</h3>
+    <h3 class="btn">Filtre</h3>
   </div>
   <div class="panel-body" *ngIf="panelExpande">
     <div>
       <div class="position"><label >  Reference de Magasin</label><input type="text" [(ngModel)]="referenceMagasin" placeholder="Taper la  Reference de Magasin " ><span (click)="search(referenceMagasin,referenceMaterial)"><i class="fa fa-search mr-1 btn btn-secondary" > </i></span> </div>
       <div class="position"><label >  Reference de Material</label><input type="text" [(ngModel)]="referenceMaterial" placeholder="Taper la  Reference de Produit "><span (click)="search(referenceMagasin,referenceMaterial)"><i class="fa fa-search mr-1 btn btn-secondary"></i></span>
-        <div class="positions"><button (click)="ngOnInit()">findAll</button></div>
+        <div class="positions"><button (click)="ngOnInit()" style="background-color: dodgerblue; color: white;">findAll</button></div>
       </div></div>
   </div>
 </div>
   </div>
   </div>
   <div class="card-body">
-      <h3>liste</h3>
+      <h2 style="color: dodgerblue; font-weight: bold;">liste</h2>
     <app-stock-list></app-stock-list>
     <button style="background-color: cornsilk; " (click)="exportexcel()">Export as Excel
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
