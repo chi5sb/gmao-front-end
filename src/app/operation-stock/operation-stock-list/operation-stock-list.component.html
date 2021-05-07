@@ -6,17 +6,17 @@
         <button type="button" class="btn btn-outline-primary" >Afficher tout les Stock</button>
       </div>
       <div class="col-md-4">
-        <span><input type="text" class="form-control" placeholder="recherche multicritère" [(ngModel)]="reference" ><i class="fa fa-search mr-1 btn btn-secondary" (click)="find(reference)"></i></span>
+        <span><input type="text" class="form-control" placeholder="recherche multicritère" [(ngModel)]="reference" ><i class="fa fa-search mr-1 btn btn-secondary" style="position: absolute; left: 305px; top: 1px; bottom: 1px; background-color: green;" (click)="find(reference)"></i></span>
       </div>
      </div>
-
+    <br> <br>
     <div class="row"><label></label></div>
     <table>
       <thead>
       <th >Id</th>
       <th >Stock Source</th>
       <th >Stock Destination</th>
-      <th >Material</th>
+      <th >Matériel</th>
       <th >Quantité</th>
 
     <!--  <th>Description</th> -->
