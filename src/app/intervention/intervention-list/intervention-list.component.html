@@ -1,1 +1,85 @@
-<p>intervention-list works!</p>
+
+
+<h1 id="title" class="jumbotron p-5"  >interventions</h1>
+
+
+<form id="search" class="form-inline my-0 my-lg-3">
+  <input class="form-control mr-sm-3" type="search" placeholder="Search" >
+  <button class="btn btn-outline-success my-2 my-sm-4" type="submit">Search</button>
+</form>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div
+          class="card-header"
+          style="font-family: monospace; color: #3f51b5; font-weight: bold"
+        >
+         liste interventions
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <tr>
+              <th style="background-color: #3f51b5; color: white">id</th>
+              <th style="background-color: #3f51b5; color: white">code</th>
+              <th style="background-color: #3f51b5; color: white">dateDeProbleme</th>
+              <th style="background-color: #3f51b5; color: white">dateDebut</th>
+              <th style="background-color: #3f51b5; color: white">dateFin</th>
+              <th style="background-color: #3f51b5; color: white">libelle</th>
+
+
+              <th style="background-color: #3f51b5; color: white">Action</th>
+            </tr>
+            <tbody>
+
+                <tr *ngFor="let c of interventions">
+                  <td>{{ c.id }}</td>
+                  <td>{{ c.code }}</td>
+                  <td>{{ c.dateDeProbleme}}</td>
+                  <td>{{ c.dateDebut }}</td>
+                  <td>{{ c.dateFin }}</td>
+                  <td>{{ c.libelle}}</td>
+                  <td><span (click)="delete(i,c)"><i class="fa fa-trash btn btn-warning"></i> </span> <span (click)="update(i,c)"><i class="fa fa-edit ml-1 btn btn-info"></i> </span> </td>
+
+            </tbody>
+          </table>
+          <tfoot>
+            <mat-paginator [length]="5"
+                [pageSize]="10"
+                [pageSizeOptions]="[1 , 10, 25, 100]">
+  </mat-paginator>
+          </tfoot>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-12">
+    <div class="card">
+      <div
+        class="card-header"
+        style="font-family: monospace; color: #3f51b5; font-weight: bold"
+      >
+        Details interventions
+      </div>
+      <div class="card-body">
+        <table class="table">
+          <tr>
+            <th style="background-color: #3f51b5; color: white">id</th>
+            <th style="background-color: #3f51b5; color: white">material</th>
+            <th style="background-color: #3f51b5; color: white">etat intervention</th>
+            <th style="background-color: #3f51b5; color: white">Action</th>
+          </tr>
+          <tbody>
+
+
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+
+  </div>
+  </div>
+</div>
+

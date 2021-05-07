@@ -89,7 +89,4 @@ export class StockService {
     myClone.magasin.reference = stock.magasin.reference;
     return myClone;
   }
-  deleteByRefMagAndRefMat(referenceMag: string, referenceMat: string) {
-
-  }
 }

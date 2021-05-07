@@ -1,0 +1,22 @@
+#search{
+    margin-right: 10px;
+    margin-left: 30%;
+    width: 30%;
+}
+#title{
+    margin-top: 10px;
+   
+    background-color: lavender;
+    
+        text-align: center;
+       font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        font-size: 3rem;
+     color: #3f51b5;
+
+}
+.card-header {
+    text-align: center;
+    font-size: 1.5rem;
+   
+  }
+  

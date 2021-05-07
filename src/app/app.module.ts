@@ -35,7 +35,10 @@ import { CollaborateurListComponent } from './collaborateur/collaborateur-list/c
 import { InterventionInfoComponent } from './intervention/intervention-info/intervention-info.component';
 import { MembreEquipeComponent } from './membre-equipe/membre-equipe.component';
 import { InterventionConsielComponent } from './intervention/intervention-consiel/intervention-consiel.component';
-
+import {OperationStockCreateComponent} from './operation-stock/operation-stock-create/operation-stock-create.component';
+import {OperationStockListComponent} from './operation-stock/operation-stock-list/operation-stock-list.component';
+import {OperationStockComponent} from './operation-stock/operation-stock.component';
+import {MatPaginatorModule} from '@angular/material/paginator';
 @NgModule({
   declarations: [
     AppComponent,
@@ -59,6 +62,9 @@ import { InterventionConsielComponent } from './intervention/intervention-consie
     InterventionInfoComponent,
     MembreEquipeComponent,
     InterventionConsielComponent,
+    OperationStockComponent,
+    OperationStockCreateComponent,
+    OperationStockListComponent
   ],
   imports: [
     BrowserModule,
@@ -77,6 +83,7 @@ import { InterventionConsielComponent } from './intervention/intervention-consie
     FormsModule,
     HttpClientModule,
     MatSnackBarModule,
+    MatPaginatorModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

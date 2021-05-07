@@ -8,6 +8,7 @@ import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import {StockComponent} from "./stock/stock.component";
 import {InterventionComponent} from './intervention/intervention.component';
+import {OperationStockComponent} from './operation-stock/operation-stock.component';
 
 const componenets = [
   ChefEquipeComponent,
@@ -17,7 +18,8 @@ const componenets = [
   PageNotfoundComponent,
   EquipesComponent,
   StockComponent,
-  InterventionComponent
+  InterventionComponent,
+  OperationStockComponent
 ];
 
 const routes: Routes = [
@@ -29,6 +31,7 @@ const routes: Routes = [
   {path: 'equipes',component: componenets[5]},
   {path: 'stock',component: componenets[6]},
   {path: 'intervention', component: componenets[7]},
+  {path: 'operationStock',component:componenets[8]},
   {path: '**', component: componenets[4]}
 ];
 
