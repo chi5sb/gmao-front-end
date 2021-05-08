@@ -29,7 +29,7 @@ export class CollaborateurCreateComponent implements OnInit {
   get collaborateurs(): Array<Collaborateur> {
     return this.collaborateurService.collaborateurs;
   }
-
+  selected: string = '';
   // public addMembres() {
   //   this.equipesService.addMembres();
   // }
@@ -45,5 +45,10 @@ export class CollaborateurCreateComponent implements OnInit {
 
   saveCollaboraateur() {
     this.interventionService.saveCollaboraateur();
+  }
+
+
+  isSelected($event: any) {
+    this.selected=$event.target.value;
   }
 }

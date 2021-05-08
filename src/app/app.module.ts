@@ -39,6 +39,7 @@ import {OperationStockCreateComponent} from './operation-stock/operation-stock-c
 import {OperationStockListComponent} from './operation-stock/operation-stock-list/operation-stock-list.component';
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +65,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     InterventionConsielComponent,
     OperationStockComponent,
     OperationStockCreateComponent,
-    OperationStockListComponent
+    OperationStockListComponent,
   ],
   imports: [
     BrowserModule,

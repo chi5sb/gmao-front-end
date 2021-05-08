@@ -43,13 +43,13 @@
   <div class="card-body">
     <div class="form-group">
 
-      <select class="form-control">
+      <select class="form-control" (change)="isSelected($event)">
 
-        <option *ngFor="let c of collaborateurs"> {{c.fullname}}</option>
+        <option *ngFor="let c of collaborateurs" [value]="c.codeCollaborateur"> {{c.fullname}}</option>
       </select>
       <label for="">Code Collaborateur</label>
       <input
-        [(ngModel)]="collaborateur.collaborateur.codeCollaborateur"
+         [value]="selected"
         type="text"
         class="form-control"
         [disabled]="true"
