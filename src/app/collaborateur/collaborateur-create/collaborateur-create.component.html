@@ -42,17 +42,17 @@
 <div class="card">
   <div class="card-body">
     <div class="form-group">
-      <label for="">Nom Complet</label>
-      <input
-        [(ngModel)]="collaborateur.collaborateur.fullname"
-        type="text"
-        class="form-control"
-      />
+
+      <select class="form-control">
+
+        <option *ngFor="let c of collaborateurs"> {{c.fullname}}</option>
+      </select>
       <label for="">Code Collaborateur</label>
       <input
         [(ngModel)]="collaborateur.collaborateur.codeCollaborateur"
         type="text"
         class="form-control"
+        [disabled]="true"
       />
     </div>
   </div>

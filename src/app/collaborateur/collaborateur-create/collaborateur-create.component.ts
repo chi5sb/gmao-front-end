@@ -26,7 +26,9 @@ export class CollaborateurCreateComponent implements OnInit {
   get collaborateur(): InterventionCollaborateur {
     return this.interventionService.collaborateur;
   }
-
+  get collaborateurs(): Array<Collaborateur> {
+    return this.collaborateurService.collaborateurs;
+  }
 
   // public addMembres() {
   //   this.equipesService.addMembres();
@@ -36,7 +38,10 @@ export class CollaborateurCreateComponent implements OnInit {
   //   return this.equipesService.membre;
   // }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.collaborateurService.findAll();
+
+  }
 
   saveCollaboraateur() {
     this.interventionService.saveCollaboraateur();
