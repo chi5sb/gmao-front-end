@@ -12,11 +12,14 @@
     </div>
     </div>
     <div class="row">
+
+    <div class="col-md-6"><label style="color: blue; font-weight: bold;">Matériel </label>
+      <input type="text" class="form-control"[(ngModel)]="operationstock.material.reference" ></div>
+
       <div class="col-md-6"><label style="color: blue; font-weight: bold;">Quantité</label>
         <input type="number" class="form-control"[(ngModel)]="operationstock.qte" ></div>
 
-    <div class="col-md-6"><label style="color: blue; font-weight: bold;">Matériel </label>
-      <input type="text" class="form-control"[(ngModel)]="operationstock.material.reference" ></div>   </div>
+    </div>
     </div>
 
   <div class="card-footer">
@@ -28,16 +31,16 @@
   </div>
 <br>
   <div class="form-group">
-    <label style="color: green; font-weight: bold;">Quantité min</label>
+    <label style="color: green; font-weight: bold;">Quantité Min</label>
     <input type="number" class="form-control" [(ngModel)]="qteMin">
   </div>
 
   <div class="form-group">
-    <label style="color: red; font-weight: bold;">Quantité max</label>
+    <label style="color: red; font-weight: bold;">Quantité Max</label>
     <input type="number" class="form-control" [(ngModel)]="qteMax">
   </div>
 
-    <button (click)="findbyCritere(qteMax,qteMin)">find</button>
+    <button style="background-color: dodgerblue; color: white;" (click)="findbyCritere(qteMax,qteMin)">Find</button>
 
 <!--
 <div class="row">

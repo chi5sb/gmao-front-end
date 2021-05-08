@@ -1,1 +1,7 @@
-
+.card {
+  width: 500px;
+  height: 550px;
+  position: fixed;
+  top: 63px;
+  left: 0px;
+}

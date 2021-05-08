@@ -1,4 +1,4 @@
-<div class="card">
+<div class="card" class="button">
   <div class="card-header" style="text-align: center; font-size: 20px; color: deepskyblue;"><b>Détail d'Opération Stock</b></div>
   <div class="card-body">
     <div class="row">
@@ -8,26 +8,33 @@
       <div class="col-md-4">
         <span><input type="text" class="form-control" placeholder="recherche multicritère" [(ngModel)]="reference" ><i class="fa fa-search mr-1 btn btn-secondary" style="position: absolute; left: 305px; top: 1px; bottom: 1px; background-color: green;" (click)="find(reference)"></i></span>
       </div>
+
      </div>
-    <br> <br>
+
+    <br><br>
+
     <div class="row"><label></label></div>
     <table>
       <thead>
-      <th >Id</th>
-      <th >Stock Source</th>
-      <th >Stock Destination</th>
-      <th >Matériel</th>
-      <th >Quantité</th>
+   <!--   <th >Id</th> -->
+      <th >Magasin Source</th>
+      <th >Magasin Destination</th>
+    <!--  <th >Matériel</th> -->
+    <!--  <th >Quantité</th> -->
+      <th>Quantité Min</th>
+      <th>Quantité Max</th>
 
     <!--  <th>Description</th> -->
       </thead>
       <tbody>
       <tr *ngFor="let c of operationstocks index as i">
-        <td class="table-primary">{{i+1}}</td>
+      <!--  <td class="table-primary">{{i+1}}</td> -->
         <td class="table-info" >{{c.magasinSource.reference}}</td>
         <td class="table-info" >{{c.magasinDestination.reference}}</td>
         <td class="table-secondary" >{{c.material.reference}}</td>
         <td class="table-warning">{{c.qte}}</td>
+    <!--    <td class="form-control">{{qteMax}}</td>
+            <td class="form-control">{{qteMin}}</td>  -->
       <!--  <td class="table-success">{{c.descrition}}</td> -->
       </tr>
       </tbody>
