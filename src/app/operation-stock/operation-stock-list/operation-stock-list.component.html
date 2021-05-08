@@ -6,7 +6,7 @@
         <button type="button" class="btn btn-outline-primary" >Afficher tout les Stock</button>
       </div>
       <div class="col-md-4">
-        <span><input type="text" class="form-control" placeholder="recherche multicritère" [(ngModel)]="reference" ><i class="fa fa-search mr-1 btn btn-secondary" style="position: absolute; left: 305px; top: 1px; bottom: 1px; background-color: green;" (click)="find(reference)"></i></span>
+        <span><input style="position: relative; left: 150px;" type="text" class="form-control" placeholder="recherche multicritère" [(ngModel)]="reference" ><i class="fa fa-search mr-1 btn btn-secondary" style="position: relative; right: 400px; left: 605px; bottom: 38px; background-color: green;" (click)="Enter(reference)"></i></span>
       </div>
 
       <div class="form-group" class="min">
@@ -21,7 +21,7 @@
 
       <button class="find" style="background-color: dodgerblue; color: white;" (click)="findbyCritere(qteMax,qteMin)">Find</button>
 
-      <button class="sauce button1" style="position: absolute; top: 205px; right: 135px;" (click)="open(find)">+</button>
+      <button class="sauce button1" style="position: absolute; top: 205px; right: 300px;" (click)="open(find)">+</button>
 
     </div>
 
@@ -57,5 +57,5 @@
 
 </div>
 <ng-template #find let-modal >
-  <app-stock-create></app-stock-create>
+  <app-operation-stock-create></app-operation-stock-create>
 </ng-template>

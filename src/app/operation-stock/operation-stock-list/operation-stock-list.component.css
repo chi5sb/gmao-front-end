@@ -50,19 +50,19 @@ mat-form-field {
 
 .min {
   position: absolute;
-  right: 750px;
+  right: 980px;
   top: 180px;
 }
 
 .max {
   position: absolute;
-  right: 500px;
+  right:760px;
   top: 180px;
 }
 
 .find {
   position: absolute;
-  right: 350px;
+  right: 630px;
   top: 211px;
   width: 100px;
   height: 40px;

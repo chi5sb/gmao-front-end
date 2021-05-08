@@ -68,5 +68,9 @@ export class OperationStockListComponent implements OnInit {
       return `with: ${reason}`;
     }
   }
+
+  Enter(reference: string) {
+    
+  }
 }
 
