@@ -9,7 +9,7 @@ tr {
 td,
 th {
   border: 1px solid #dddddd;
-  text-align: centre;
+  text-align: center;
   padding: 8px;
   background-color: white;
 }
@@ -46,4 +46,9 @@ mat-form-field {
 .card-header {
   text-align: center;
   font-size: 1.5rem;
+}
+
+.card {
+  position: absolute;
+  top: 63px;
 }
