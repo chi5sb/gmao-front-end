@@ -46,6 +46,7 @@ export class OperationStockListComponent implements OnInit {
   findbyCritere(qteMax: number, qteMin: number) {
     // this.operationStockservice.findByCritere(qteMax,qteMin);
   }
-
+  qteMin: number;
+  qteMax: number;
 }
 
