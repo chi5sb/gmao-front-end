@@ -15,8 +15,9 @@ import {MagasinService} from '../../controller/service/magasin.service';
   styleUrls: ['./stock-create.component.css']
 })
 export class StockCreateComponent implements OnInit {
+  private selected: any;
 
-  constructor(private stockService: StockService,private interventionService: InterventionService, private materialService: MaterialService,private  magasinService:MagasinService) { }
+  constructor(private stockService: StockService, private interventionService: InterventionService, private materialService: MaterialService, private  magasinService: MagasinService) { }
 
   get intervention(): Intervention {
     return this.interventionService.intervention;
@@ -27,10 +28,10 @@ export class StockCreateComponent implements OnInit {
   get materials(): Array<Material>{
     return this.materialService.materials;
   }
-  get magasins():Array<Magasin>{
+  get magasins(): Array<Magasin>{
     return this.magasinService.magasins;
   }
-  selection: string;
+
 
   ngOnInit(): void {
     this.materialService.findAll();
@@ -61,6 +62,10 @@ export class StockCreateComponent implements OnInit {
 
   }
   isSelected($event: any) {
-    this.selection = $event.target.value();
+    this.stock.magasin.reference = $event.target.value;
+  }
+
+  isSelecte($event: any) {
+    this.stock.material.reference = $event.target.value;
   }
 }

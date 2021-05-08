@@ -49,6 +49,6 @@ export class CollaborateurCreateComponent implements OnInit {
 
 
   isSelected($event: any) {
-    this.selected=$event.target.value;
+    this.collaborateur.collaborateur.codeCollaborateur=$event.target.value;
   }
 }

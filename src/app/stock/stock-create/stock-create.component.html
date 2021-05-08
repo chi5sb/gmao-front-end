@@ -5,12 +5,12 @@
       >
       <select class="form-control" (change)="isSelected($event)">
 
-        <option *ngFor="let c of magasins" [value]="c.reference"> {{c.reference}}</option>
+        <option *ngFor="let c of magasins" > {{c.reference}}</option>
       </select>
     </div>
     <div class="form-group">
       <label>Material</label
-      > <select class="form-control" (change)="isSelected($event)">
+      > <select class="form-control" (change)="isSelecte($event)">
 
       <option *ngFor="let c of materials" [value]="c.reference"> {{c.reference}}</option>
     </select>
