@@ -21,7 +21,7 @@
 
       <button class="find" style="background-color: dodgerblue; color: white;" (click)="findbyCritere(qteMax,qteMin)">Find</button>
 
-      <button class="sauce button1" style="position: absolute; top: 205px; right: 135px;" >+</button>
+      <button class="sauce button1" style="position: absolute; top: 205px; right: 135px;" (click)="open(find)">+</button>
 
     </div>
 
@@ -56,4 +56,6 @@
   </div>
 
 </div>
-
+<ng-template #find let-modal >
+  <app-stock-create></app-stock-create>
+</ng-template>
