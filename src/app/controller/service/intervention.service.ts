@@ -146,7 +146,7 @@ export class InterventionService {
     this.collaborateur.intervention = this.intervention;
     this.collaborateurs.push(this._collaborateur);
     this._codeCollaborateur=this.collaborateur.collaborateur.codeCollaborateur;
-    console.log(this._collaborateurs)
+    console.log(this._codeCollaborateur)
     this._collaborateur = null;
   }
   saveStock(){
@@ -162,8 +162,10 @@ export class InterventionService {
     this.conseilIntervention.intervention=this.intervention;
     this.conseilIntervention.collaborateur.codeCollaborateur=this._codeCollaborateur;
     this.conseilInterventions.push(this._conseilIntervention);
+    this.intervention.conseils=this.conseilInterventions;
     this._conseilIntervention=null;
     console.log(this._conseilInterventions)
+    console.log(this.intervention)
   };
    getCircularReplacer = () => {
     const seen = new WeakSet();
@@ -188,7 +190,7 @@ export class InterventionService {
           alert('one of the reference are not available');
         }
           else{
-            console.log('success');
+            console.log('success'+data);
           }
       }
     );
