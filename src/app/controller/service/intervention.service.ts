@@ -8,6 +8,7 @@ import {Collaborateur} from '../model/collaborateur.model';
 import {StockService} from "./stock-service.service";
 import {Conseils} from "../model/conseils.model";
 import {any} from "codelyzer/util/function";
+import { InterventionVo } from '../model/intervention-vo.model';
 
 @Injectable({
   providedIn: 'root',
@@ -27,7 +28,8 @@ export class InterventionService {
   private _conseilInterventions : Array<Conseils>;
   private urlBase:string ="http://localhost:8036/Intervention-api/intervention";
   private _index: number;
-
+  urlCriteria='http://localhost:8036/Intervention-api/intervention/criteria';
+  public _interventionVo: InterventionVo;
   get conseilIntervention(): Conseils {
     if(this._conseilIntervention==null){
       this._conseilIntervention = new Conseils();
@@ -50,7 +52,16 @@ export class InterventionService {
   set conseilInterventions(value: Array<Conseils>) {
     this._conseilInterventions = value;
   }
+  get interventionVo(): InterventionVo {
+    if (this._interventionVo == null) {
+      this._interventionVo = new InterventionVo();
+    }
+    return this._interventionVo;
+  }
 
+  set interventionVO(value: InterventionVo) {
+    this._interventionVo = value;
+  }
   get materialInterventions(): Array<MateraialIntervention> {
     if ( this._materialInterventions == null){
       this._materialInterventions = new Array<MateraialIntervention>();
@@ -141,7 +152,16 @@ export class InterventionService {
   set interventions(value: Array<Intervention>) {
     this._interventions = value;
   }
-
+  public findByCriteria(){
+    this.http.post<Array<Intervention>>(this.urlCriteria,this.interventionVo).subscribe(
+      data => {
+        this.interventions = data ;
+      
+        
+      }, error => {
+        console.log(error); }
+    );
+  }
   saveCollaboraateur() {
     this.collaborateur.intervention = this.intervention;
     this.collaborateurs.push(this._collaborateur);

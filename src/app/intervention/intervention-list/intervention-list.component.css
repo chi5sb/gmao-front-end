@@ -1,7 +1,17 @@
-#search{
-    margin-right: 10px;
-    margin-left: 30%;
-    width: 30%;
+
+#search1{
+    margin-right: 10%;
+    margin-left: 25%;
+    width: 20%;
+    margin-bottom: 20px;
+}
+#Search2{
+    width: 20%;
+    margin-left: 20px;
+}
+#btnSearch{
+    width: 6%;
+    height: 2%;
 }
 #title{
     margin-top: 10px;
