@@ -39,6 +39,7 @@ import {OperationStockCreateComponent} from './operation-stock/operation-stock-c
 import {OperationStockListComponent} from './operation-stock/operation-stock-list/operation-stock-list.component';
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 
 @NgModule({
   declarations: [
@@ -85,6 +86,7 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     HttpClientModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
