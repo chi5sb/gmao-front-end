@@ -40,6 +40,7 @@ import {OperationStockListComponent} from './operation-stock/operation-stock-lis
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
   declarations: [
@@ -67,6 +68,7 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     OperationStockComponent,
     OperationStockCreateComponent,
     OperationStockListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
