@@ -5,6 +5,7 @@ import { StockService } from '../../controller/service/stock-service.service';
 import { OperationStock } from '../../controller/model/operationStock.model';
 import { Stock } from '../../controller/model/Stock.model';
 import {ModalDismissReasons, NgbModal} from '@ng-bootstrap/ng-bootstrap';
+import {error} from '@angular/compiler/src/util';
 
 @Component({
   selector: 'app-operation-stock-list',
@@ -70,7 +71,16 @@ export class OperationStockListComponent implements OnInit {
   }
 
   Enter(reference: string) {
-    
   }
+
+ // public findByCriteria() {
+ //   this.http.post<Array<OperationStock>>(this.urlCriteria,this.operationstockVo).subscribe(
+ //     data => {
+ //       this.operationstocks = data;
+ //     }, error => {
+  //      console.log(error);
+  //    }
+  //  );
+ // }
 }
 
