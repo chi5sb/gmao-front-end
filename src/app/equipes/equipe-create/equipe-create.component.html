@@ -1,172 +1,172 @@
-<div class="row">
-  <div class="col-md-6">
-    <mat-accordion>
-      <mat-expansion-panel hideToggle style="background-color: lavender">
-        <mat-expansion-panel-header>
-          <mat-panel-title
-            style="
-              font-weight: bold;
-              font-family: 'Courier New', Courier, monospace;
-            "
-          >
-            Créer Equipe
-          </mat-panel-title>
-          <mat-panel-description> </mat-panel-description>
-        </mat-expansion-panel-header>
-        <mat-tab-group>
-          <mat-tab label="Equipes">
-            <div class="card">
-              <div class="card-body">
-                <div class="form-group">
-                  <label style="color: #3f51b5; font-weight: bold" for="ref"
-                    >Reference</label
-                  >
-                  <input
-                    [(ngModel)]="equipe.ref"
-                    name="ref"
-                    type="text"
-                    class="form-control"
-                  />
-                  <label style="color: #3f51b5; font-weight: bold" for="libelle"
-                    >Libelle</label
-                  >
-                  <input
-                    [(ngModel)]="equipe.libelle"
-                    name="libelle"
-                    type="text"
-                    class="form-control"
-                  />
-                  <label
-                    style="color: #3f51b5; font-weight: bold"
-                    for="ref-chef"
-                    >Reference Chef</label
-                  >
-                  <input
-                    [(ngModel)]="equipe.chefEquipe.id"
-                    name="ref-chef"
-                    type="text"
-                    class="form-control"
-                  />
-                </div>
-              </div>
-            </div>
-          </mat-tab>
-          <mat-tab style="font-weight: bold" label="Collaborateures">
-            <!-- <div class="card">
-              <div class="card-body">
-                <div class="form-group">
-                  <label style="color: #3f51b5; font-weight: bold" for="nom"
-                    >Nom et Prénom</label
-                  >
-                  <input
-                    [(ngModel)]="membre.fullname"
-                    type="text"
-                    name="nom"
-                    class="form-control"
-                  />
+<!--<div class="row">-->
+<!--  <div class="col-md-6">-->
+<!--    <mat-accordion>-->
+<!--      <mat-expansion-panel hideToggle style="background-color: lavender">-->
+<!--        <mat-expansion-panel-header>-->
+<!--          <mat-panel-title-->
+<!--            style="-->
+<!--              font-weight: bold;-->
+<!--              font-family: 'Courier New', Courier, monospace;-->
+<!--            "-->
+<!--          >-->
+<!--            Créer Equipe-->
+<!--          </mat-panel-title>-->
+<!--          <mat-panel-description> </mat-panel-description>-->
+<!--        </mat-expansion-panel-header>-->
+<!--        <mat-tab-group>-->
+<!--          <mat-tab label="Equipes">-->
+<!--            <div class="card">-->
+<!--              <div class="card-body">-->
+<!--                <div class="form-group">-->
+<!--                  <label style="color: #3f51b5; font-weight: bold" for="ref"-->
+<!--                    >Reference</label-->
+<!--                  >-->
+<!--                  <input-->
+<!--                    [(ngModel)]="equipe.ref"-->
+<!--                    name="ref"-->
+<!--                    type="text"-->
+<!--                    class="form-control"-->
+<!--                  />-->
+<!--                  <label style="color: #3f51b5; font-weight: bold" for="libelle"-->
+<!--                    >Libelle</label-->
+<!--                  >-->
+<!--                  <input-->
+<!--                    [(ngModel)]="equipe.libelle"-->
+<!--                    name="libelle"-->
+<!--                    type="text"-->
+<!--                    class="form-control"-->
+<!--                  />-->
+<!--                  <label-->
+<!--                    style="color: #3f51b5; font-weight: bold"-->
+<!--                    for="ref-chef"-->
+<!--                    >Reference Chef</label-->
+<!--                  >-->
+<!--                  <input-->
+<!--                    [(ngModel)]="equipe.chefEquipe.id"-->
+<!--                    name="ref-chef"-->
+<!--                    type="text"-->
+<!--                    class="form-control"-->
+<!--                  />-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div>-->
+<!--          </mat-tab>-->
+<!--          <mat-tab style="font-weight: bold" label="Collaborateures">-->
+<!--            &lt;!&ndash; <div class="card">-->
+<!--              <div class="card-body">-->
+<!--                <div class="form-group">-->
+<!--                  <label style="color: #3f51b5; font-weight: bold" for="nom"-->
+<!--                    >Nom et Prénom</label-->
+<!--                  >-->
+<!--                  <input-->
+<!--                    [(ngModel)]="membre.fullname"-->
+<!--                    type="text"-->
+<!--                    name="nom"-->
+<!--                    class="form-control"-->
+<!--                  />-->
 
-                  <label style="color: #3f51b5; font-weight: bold" for="tele"
-                    >Telephone</label
-                  ><input
-                    [(ngModel)]="membre.phone"
-                    type="text"
-                    name="tele"
-                    class="form-control"
-                  />
-                  <label style="color: #3f51b5; font-weight: bold" for="email"
-                    >Email</label
-                  >
-                  <input
-                    [(ngModel)]="membre.email"
-                    type="text"
-                    name="email"
-                    class="form-control"
-                  />
-                </div>
-                <div class="card-footer">
-                  <button
-                    class="but btn-block btn-outline-success"
-                    mat-raised-button
-                    color="primary"
-                    (click)="addMembres()"
-                  >
-                    +
-                  </button>
-                </div>
-              </div>
-            </div> -->
-            <app-membre-equipe></app-membre-equipe>
-          </mat-tab>
-        </mat-tab-group>
-      </mat-expansion-panel>
-      <mat-expansion-panel
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-      >
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
+<!--                  <label style="color: #3f51b5; font-weight: bold" for="tele"-->
+<!--                    >Telephone</label-->
+<!--                  ><input-->
+<!--                    [(ngModel)]="membre.phone"-->
+<!--                    type="text"-->
+<!--                    name="tele"-->
+<!--                    class="form-control"-->
+<!--                  />-->
+<!--                  <label style="color: #3f51b5; font-weight: bold" for="email"-->
+<!--                    >Email</label-->
+<!--                  >-->
+<!--                  <input-->
+<!--                    [(ngModel)]="membre.email"-->
+<!--                    type="text"-->
+<!--                    name="email"-->
+<!--                    class="form-control"-->
+<!--                  />-->
+<!--                </div>-->
+<!--                <div class="card-footer">-->
+<!--                  <button-->
+<!--                    class="but btn-block btn-outline-success"-->
+<!--                    mat-raised-button-->
+<!--                    color="primary"-->
+<!--                    (click)="addMembres()"-->
+<!--                  >-->
+<!--                    +-->
+<!--                  </button>-->
+<!--                </div>-->
+<!--              </div>-->
+<!--            </div> &ndash;&gt;-->
+<!--            <app-membre-equipe></app-membre-equipe>-->
+<!--          </mat-tab>-->
+<!--        </mat-tab-group>-->
+<!--      </mat-expansion-panel>-->
+<!--      <mat-expansion-panel-->
+<!--        (opened)="panelOpenState = true"-->
+<!--        (closed)="panelOpenState = false"-->
+<!--      >-->
+<!--      </mat-expansion-panel>-->
+<!--    </mat-accordion>-->
+<!--  </div>-->
 
-  <div class="col-md-6">
-    <mat-accordion>
-      <mat-expansion-panel hideToggle style="background-color: lavender">
-        <mat-expansion-panel-header>
-          <mat-panel-title
-            style="
-              font-weight: bold;
-              font-family: 'Courier New', Courier, monospace;
-            "
-          >
-            Ajouter l'équipe</mat-panel-title
-          >
-          <mat-panel-description> </mat-panel-description>
-        </mat-expansion-panel-header>
-        <div class="card">
-          <div
-            class="card-header"
-            style="font-family: monospace; color: #3f51b5; font-weight: bold"
-          >
-            Liste Membre-Equipe
-          </div>
-          <div class="card-body">
-            <table class="table">
-              <thead>
-                <th style="font-weight: bold">Nom et Prénom</th>
-                <th style="font-weight: bold">Telephone</th>
-                <th style="font-weight: bold">Email</th>
-                <th style="font-weight: bold">action</th>
-              </thead>
-              <tbody>
-                <tr *ngFor="let c of equipe.membres">
-                  <td>{{ c.fullname }}</td>
-                  <td>{{ c.phone }}</td>
-                  <td>{{ c.email }}</td>
-                  <td>
-                    <span (click)="deleteColl(i)"
-                      ><i class="fa fa-trash btn btn-sm btn-outline-danger"></i
-                    ></span>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          <div class="card-footer">
-            <button
-              class="but btn-block btn-outline-success"
-              mat-raised-button
-              color="primary"
-              (click)="save()"
-            >
-              Valider
-            </button>
-          </div>
-        </div>
-      </mat-expansion-panel>
-      <mat-expansion-panel
-        (opened)="panelOpenState = true"
-        (closed)="panelOpenState = false"
-      >
-      </mat-expansion-panel>
-    </mat-accordion>
-  </div>
-</div>
+<!--  <div class="col-md-6">-->
+<!--    <mat-accordion>-->
+<!--      <mat-expansion-panel hideToggle style="background-color: lavender">-->
+<!--        <mat-expansion-panel-header>-->
+<!--          <mat-panel-title-->
+<!--            style="-->
+<!--              font-weight: bold;-->
+<!--              font-family: 'Courier New', Courier, monospace;-->
+<!--            "-->
+<!--          >-->
+<!--            Ajouter l'équipe</mat-panel-title-->
+<!--          >-->
+<!--          <mat-panel-description> </mat-panel-description>-->
+<!--        </mat-expansion-panel-header>-->
+<!--        <div class="card">-->
+<!--          <div-->
+<!--            class="card-header"-->
+<!--            style="font-family: monospace; color: #3f51b5; font-weight: bold"-->
+<!--          >-->
+<!--            Liste Membre-Equipe-->
+<!--          </div>-->
+<!--          <div class="card-body">-->
+<!--            <table class="table">-->
+<!--              <thead>-->
+<!--                <th style="font-weight: bold">Nom et Prénom</th>-->
+<!--                <th style="font-weight: bold">Telephone</th>-->
+<!--                <th style="font-weight: bold">Email</th>-->
+<!--                <th style="font-weight: bold">action</th>-->
+<!--              </thead>-->
+<!--              <tbody>-->
+<!--&lt;!&ndash;                <tr *ngFor="let c of equipe.membres">&ndash;&gt;-->
+<!--&lt;!&ndash;                  <td>{{ c.fullname }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <td>{{ c.phone }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <td>{{ c.email }}</td>&ndash;&gt;-->
+<!--&lt;!&ndash;                  <td>&ndash;&gt;-->
+<!--&lt;!&ndash;                    <span (click)="deleteColl(i)"&ndash;&gt;-->
+<!--&lt;!&ndash;                      ><i class="fa fa-trash btn btn-sm btn-outline-danger"></i&ndash;&gt;-->
+<!--&lt;!&ndash;                    ></span>&ndash;&gt;-->
+<!--&lt;!&ndash;                  </td>&ndash;&gt;-->
+<!--&lt;!&ndash;                </tr>&ndash;&gt;-->
+<!--              </tbody>-->
+<!--            </table>-->
+<!--          </div>-->
+<!--          <div class="card-footer">-->
+<!--            <button-->
+<!--              class="but btn-block btn-outline-success"-->
+<!--              mat-raised-button-->
+<!--              color="primary"-->
+<!--              (click)="save()"-->
+<!--            >-->
+<!--              Valider-->
+<!--            </button>-->
+<!--          </div>-->
+<!--        </div>-->
+<!--      </mat-expansion-panel>-->
+<!--      <mat-expansion-panel-->
+<!--        (opened)="panelOpenState = true"-->
+<!--        (closed)="panelOpenState = false"-->
+<!--      >-->
+<!--      </mat-expansion-panel>-->
+<!--    </mat-accordion>-->
+<!--  </div>-->
+<!--</div>-->

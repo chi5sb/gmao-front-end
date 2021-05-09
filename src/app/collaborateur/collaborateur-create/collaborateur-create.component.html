@@ -44,15 +44,13 @@
     <div class="form-group">
 
       <select class="form-control" (change)="isSelected($event)">
-
         <option *ngFor="let c of collaborateurs" [value]="c.codeCollaborateur"> {{c.fullname}}</option>
       </select>
-      <label for="">Code Collaborateur</label>
+      <label for="">Ref Equipe</label>
       <input
-         [value]="selected"
         type="text"
         class="form-control"
-        [disabled]="true"
+        [(ngModel)]="collaborateur.equipe.ref"
       />
     </div>
   </div>

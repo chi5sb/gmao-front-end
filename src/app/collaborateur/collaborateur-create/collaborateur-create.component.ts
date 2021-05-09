@@ -1,11 +1,8 @@
 import { Collaborateur } from './../../controller/model/collaborateur.model';
 import { CollaborateurService } from './../../controller/service/collaborateur.service';
-import { MembreEquipe } from './../../controller/model/membre-equipe.model';
-import { EquipesService } from './../../controller/service/equipes.service';
 import { Component, OnInit } from '@angular/core';
 import {InterventionService} from '../../controller/service/intervention.service';
-import {CollaborateurListComponent} from '../collaborateur-list/collaborateur-list.component';
-import {InterventionCollaborateur} from '../../controller/model/intervention-collaborateur.model';
+import {InterventionMembreEquipe} from '../../controller/model/intervention-membre-equipe.model';
 
 @Component({
   selector: 'app-collaborateur-create',
@@ -23,7 +20,7 @@ export class CollaborateurCreateComponent implements OnInit {
   //   return this.collaborateurService.collaborateurs;
   // }
 
-  get collaborateur(): InterventionCollaborateur {
+  get collaborateur(): InterventionMembreEquipe {
     return this.interventionService.collaborateur;
   }
   get collaborateurs(): Array<Collaborateur> {
@@ -49,6 +46,6 @@ export class CollaborateurCreateComponent implements OnInit {
 
 
   isSelected($event: any) {
-    this.collaborateur.collaborateur.codeCollaborateur=$event.target.value;
+    this.collaborateur.membreEquipe.collaborateur.codeCollaborateur=$event.target.value;
   }
 }
