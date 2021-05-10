@@ -91,6 +91,6 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [CollaborateurListComponent],
+  entryComponents: [EquipeCreateComponent,CollaborateurListComponent],
 })
 export class AppModule {}

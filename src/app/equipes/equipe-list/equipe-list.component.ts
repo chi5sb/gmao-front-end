@@ -31,9 +31,13 @@ public deleteColl(index: number){
   get equipeSelect(): Equipe {
     return  this.equipeService.equipeSelect;
   }
-  search(referenceMagasin: string, referenceMaterial: string) {
-
-  }
+ public onCreate(){
+  this.equipeService.onCreate();
+ }
+ public onCreateCollab(){
+  this.equipeService.onCreateCollab();
+ }
+ 
   public findByEquipeRef(equipe: Equipe){
     this.equipeService.findByEquipeRef(equipe);
 }

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
 import { Equipe } from '../model/equipe.model';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { HttpClient } from '@angular/common/http';
+import { CollaborateurService } from './collaborateur.service';
 
 
 @Injectable({
@@ -21,7 +22,7 @@ export class EquipesService {
   private _equipeSelect : Equipe;
 
   constructor(private diag : MatDialog,
-    private http: HttpClient
+    private http: HttpClient,public dialog: MatDialog , private collaborateurService: CollaborateurService
     ) { }
     public findAll(){
       this.http.get<Array<Equipe>>(this.url + '/').subscribe(
@@ -115,6 +116,13 @@ export class EquipesService {
         }
       );
     }
+  }
+ 
+  onCreate() {
+    this.dialog.open(EquipeCreateComponent);
+  }
+  onCreateCollab() {
+    this.dialog.open(MembreEquipe);
   }
   public update(index: number, equipe: Equipe) {
     this.equipe = this.mycloneEquipe(equipe);
