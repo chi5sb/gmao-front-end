@@ -1,6 +1,8 @@
-export class OperationStockVo {
-  references: String;
-  Qte: String;
-  QteMin: String;
-  QteMax: String;
+import {OnInit} from '@angular/core';
+
+export class OperationStockVoList  {
+  references: string;
+  Qte: string;
+  QteMin: string;
+  QteMax: string;
 }
