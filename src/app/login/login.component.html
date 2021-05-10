@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-header">Se Connecter</div>
+  <div class="card-body">
+    <form action="" class="form-group">
+      <label for="username">Nom d'utilisateur</label>
+      <input
+        #username
+        class="form-control"
+        name="username"
+        type="text"
+        [(ngModel)]="User.login"
+      />
+      <label for="username">Mot de passe</label>
+      <input
+        #password
+        class="form-control"
+        name="username"
+        type="password"
+        [(ngModel)]="User.password"
+      />
+    </form>
+  </div>
+  <div class="card-footer">
+    <button
+      (click)="seConnecter(username.value, password.value)"
+      class="btn btn-primary btn-block"
+    >
+      Se Connecter
+    </button>
+  </div>
+</div>

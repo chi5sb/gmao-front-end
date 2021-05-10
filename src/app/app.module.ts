@@ -40,7 +40,12 @@ import {OperationStockListComponent} from './operation-stock/operation-stock-lis
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
 import {MatDatepickerModule} from '@angular/material/datepicker';
+=======
+import { LoginComponent } from './login/login.component';
+
+>>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
 @NgModule({
   declarations: [
     AppComponent,
@@ -67,6 +72,7 @@ import {MatDatepickerModule} from '@angular/material/datepicker';
     OperationStockComponent,
     OperationStockCreateComponent,
     OperationStockListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,

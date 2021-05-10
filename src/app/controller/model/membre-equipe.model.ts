@@ -1,8 +1,9 @@
+import {Collaborateur} from './collaborateur.model';
+import {Equipe} from './equipe.model';
+
 export class MembreEquipe {
- public id : number;
- public fullname : string;
- public email : string;
- public username : string;
- public password : string;
- public phone : string;
+  public  id: number;
+  public  collaborateur = new Collaborateur();
+   public  equipe = new Equipe();
+  public  activer: boolean;
 }

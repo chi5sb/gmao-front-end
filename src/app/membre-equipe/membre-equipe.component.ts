@@ -1,5 +1,5 @@
-import { MembreEquipe } from './../controller/model/membre-equipe.model';
-import { EquipesService } from './../controller/service/equipes.service';
+// import { MembreEquipe } from './../controller/model/membre-equipe.model';
+// import { EquipesService } from './../controller/service/equipes.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,13 +8,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./membre-equipe.component.css'],
 })
 export class MembreEquipeComponent implements OnInit {
-  constructor(private equipesService: EquipesService) {}
-  public addMembres() {
-    this.equipesService.addMembres();
+  // constructor(private equipesService: EquipesService) {}
+  constructor() {
   }
-
-  get membre(): MembreEquipe {
-    return this.equipesService.membre;
-  }
+  // public addMembres() {
+  //   this.equipesService.addMembres();
+  // }
+  //
+  // get membre(): MembreEquipe {
+  //   return this.equipesService.membre;
+  // }
   ngOnInit(): void {}
 }
