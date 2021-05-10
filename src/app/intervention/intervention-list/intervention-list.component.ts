@@ -9,7 +9,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterventionListComponent implements OnInit {
   constructor(private interventionService: InterventionService) {}
-
+  
+  page= 1;
+  pageSize= 5;
+  collectionSize=this.interventionService.interventions.length
+  code: string;
   ngOnInit(): void {
     this.interventionService.findAll();
   }
@@ -17,10 +21,22 @@ export class InterventionListComponent implements OnInit {
   get interventions(): Array<Intervention> {
     return this.interventionService.interventions;
   }
-   public delete(index: number){
+  get intervention(): Intervention {
+    return this.interventionService.intervention;
+  }
+  get interventionVo(){
+    return this.interventionService.interventionVo;
+  }
+  public deleteIntervention(index: number){
     this.interventions.splice(index, 1);
 }
 public update(index: number, intervention: Intervention){
   this.interventionService.update(index, intervention);
+}
+public findByCriteria(){
+  this.interventionService.findByCriteria();
+}
+public openDialog() {
+  this.interventionService.openDialog();
 }
 }

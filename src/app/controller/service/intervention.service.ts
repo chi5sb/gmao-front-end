@@ -1,13 +1,22 @@
 import { EtatIntervention } from './../model/etat-intervention.model';
 import { MateraialIntervention } from './../model/materaial-intervention.model';
-import { InterventionCollaborateur } from './../model/intervention-collaborateur.model';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Intervention } from './../model/intervention.model';
-import {Collaborateur} from '../model/collaborateur.model';
-import {StockService} from "./stock-service.service";
-import {Conseils} from "../model/conseils.model";
-import {any} from "codelyzer/util/function";
+import {StockService} from './stock-service.service';
+import {Conseils} from '../model/conseils.model';
+import { InterventionVo } from '../model/intervention-vo.model';
+<<<<<<< HEAD
+import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
+import { CollaborateurListComponent } from 'src/app/collaborateur/collaborateur-list/collaborateur-list.component';
+import { StockListComponent } from 'src/app/stock/stock-list/stock-list.component';
+=======
+import {InterventionMembreEquipe} from '../model/intervention-membre-equipe.model';
+<<<<<<< HEAD
+>>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
+=======
+import {UserService} from './user.service';
+>>>>>>> ae95c2febfe1e39daf4afce96485910f25e14ae9
 
 @Injectable({
   providedIn: 'root',
@@ -15,21 +24,30 @@ import {any} from "codelyzer/util/function";
 export class InterventionService {
 
 
-  constructor(private http: HttpClient,private stockService: StockService) {}
+<<<<<<< HEAD
+<<<<<<< HEAD
+  constructor(private http: HttpClient,private stockService: StockService,public dialog: MatDialog) {}
+=======
+  constructor(private http: HttpClient, private stockService: StockService) {}
+>>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
+=======
+  constructor(private http: HttpClient, private stockService: StockService, private userService: UserService) {}
+>>>>>>> ae95c2febfe1e39daf4afce96485910f25e14ae9
   public _intervention: Intervention;
   public _interventions: Array<Intervention>;
-  private _collaborateurs = this.intervention.interventionCollaborateur;
-  private _collaborateur: InterventionCollaborateur;
-  private _codeCollaborateur = this.collaborateur.collaborateur.codeCollaborateur;
+  private _collaborateurs = this.intervention.interventionMembreEquipe;
+  private _collaborateur: InterventionMembreEquipe;
+  private _codeCollaborateur = this.collaborateur.membreEquipe.collaborateur.codeCollaborateur;
   private _materialInterventions = this.intervention.materaialInterventions;
-  private _materialIntervention : MateraialIntervention;
-  private _conseilIntervention : Conseils;
-  private _conseilInterventions : Array<Conseils>;
-  private urlBase:string ="http://localhost:8036/Intervention-api/intervention";
+  private _materialIntervention: MateraialIntervention;
+  private _conseilIntervention: Conseils;
+  private _conseilInterventions: Array<Conseils>;
+  private urlBase = 'http://localhost:8036/Intervention-api/intervention';
   private _index: number;
-
+  urlCriteria = 'http://localhost:8036/Intervention-api/intervention/criteria';
+  public _interventionVo: InterventionVo;
   get conseilIntervention(): Conseils {
-    if(this._conseilIntervention==null){
+    if (this._conseilIntervention == null){
       this._conseilIntervention = new Conseils();
     }
     return this._conseilIntervention;
@@ -40,7 +58,7 @@ export class InterventionService {
   }
 
   get conseilInterventions(): Array<Conseils> {
-    if(this._conseilInterventions==null){
+    if (this._conseilInterventions == null){
       this._conseilInterventions = new Array<Conseils>();
     }
 
@@ -50,7 +68,16 @@ export class InterventionService {
   set conseilInterventions(value: Array<Conseils>) {
     this._conseilInterventions = value;
   }
+  get interventionVo(): InterventionVo {
+    if (this._interventionVo == null) {
+      this._interventionVo = new InterventionVo();
+    }
+    return this._interventionVo;
+  }
 
+  set interventionVO(value: InterventionVo) {
+    this._interventionVo = value;
+  }
   get materialInterventions(): Array<MateraialIntervention> {
     if ( this._materialInterventions == null){
       this._materialInterventions = new Array<MateraialIntervention>();
@@ -72,34 +99,34 @@ export class InterventionService {
   set materialIntervention(value: MateraialIntervention) {
     this._materialIntervention = value;
   }
-  get collaborateur(): InterventionCollaborateur {
-    if(this._collaborateur == null){
+  get collaborateur(): InterventionMembreEquipe {
+    if (this._collaborateur == null){
       // this._collaborateur.collaborateur = new Collaborateur();
-      this._collaborateur = new InterventionCollaborateur();
+      this._collaborateur = new InterventionMembreEquipe();
     }
     return this._collaborateur;
   }
 
-  set collaborateur(value: InterventionCollaborateur) {
+  set collaborateur(value: InterventionMembreEquipe) {
     this._collaborateur = value;
   }
 
   private _materials: Array<MateraialIntervention>;
   private _etatIntervention: EtatIntervention;
 
-  get collaborateurs(): Array<InterventionCollaborateur> {
-    if(this._collaborateurs == null){
-      this._collaborateurs = new Array<InterventionCollaborateur>();
+  get collaborateurs(): Array<InterventionMembreEquipe> {
+    if (this._collaborateurs == null){
+      this._collaborateurs = new Array<InterventionMembreEquipe>();
     }
     return this._collaborateurs;
   }
 
-  set collaborateurs(value: Array<InterventionCollaborateur>) {
+  set collaborateurs(value: Array<InterventionMembreEquipe>) {
     this._collaborateurs = value;
   }
 
   get materials(): Array<MateraialIntervention> {
-    if(this._materials == null){
+    if (this._materials == null){
       this._materials = new Array<MateraialIntervention>();
     }
     return this._materials;
@@ -110,7 +137,7 @@ export class InterventionService {
   }
 
   get etatIntervention(): EtatIntervention {
-    if(this._etatIntervention == null){
+    if (this._etatIntervention == null){
       this._etatIntervention = new EtatIntervention();
     }
     return this._etatIntervention;
@@ -141,34 +168,50 @@ export class InterventionService {
   set interventions(value: Array<Intervention>) {
     this._interventions = value;
   }
+  openDialog() {
+    this.dialog.open(CollaborateurListComponent);
+  }
 
+  public findByCriteria(){
+    this.http.post<Array<Intervention>>(this.urlCriteria, this.interventionVo).subscribe(
+      data => {
+        this.interventions = data ;
+
+
+      }, error => {
+        console.log(error); }
+    );
+  }
+  
   saveCollaboraateur() {
     this.collaborateur.intervention = this.intervention;
     this.collaborateurs.push(this._collaborateur);
-    this._codeCollaborateur=this.collaborateur.collaborateur.codeCollaborateur;
-    console.log(this._collaborateurs)
+    this._codeCollaborateur = this.collaborateur.membreEquipe.collaborateur.codeCollaborateur;
+    console.log(this._codeCollaborateur);
     this._collaborateur = null;
   }
   saveStock(){
     this.materialIntervention.intervention = this.intervention;
-    this.materialIntervention.collaborateur.codeCollaborateur=this._codeCollaborateur;
+    this.materialIntervention.collaborateur.codeCollaborateur = this._codeCollaborateur;
     this.materialInterventions.push(this._materialIntervention);
     this.stockService.stock = null;
-    console.log(this._materialInterventions)
+    console.log(this._materialInterventions);
     // this.materialIntervention.push(this.materialIntervention);
 
   }
   saveConseil(){
-    this.conseilIntervention.intervention=this.intervention;
-    this.conseilIntervention.collaborateur.codeCollaborateur=this._codeCollaborateur;
+    this.conseilIntervention.intervention = this.intervention;
+    this.conseilIntervention.collaborateur.codeCollaborateur = this._codeCollaborateur;
     this.conseilInterventions.push(this._conseilIntervention);
-    this._conseilIntervention=null;
-    console.log(this._conseilInterventions)
-  };
+    this.intervention.conseils = this.conseilInterventions;
+    this._conseilIntervention = null;
+    console.log(this._conseilInterventions);
+    console.log(this.intervention);
+  }
    getCircularReplacer = () => {
     const seen = new WeakSet();
     return (key, value) => {
-      if (typeof value === "object" && value !== null) {
+      if (typeof value === 'object' && value !== null) {
         if (seen.has(value)) {
           return;
         }
@@ -176,19 +219,20 @@ export class InterventionService {
       }
       return value;
     };
-  };
+  }
 
   // JSON.stringify(circularReference, getCircularReplacer());
   saveIntervention() {
-    let stringifi=JSON.stringify(this.intervention, this.getCircularReplacer());
+    console.log(this.intervention);
+    const stringifi = JSON.stringify(this.intervention, this.getCircularReplacer());
 
-    this.http.post(this.urlBase+'/',JSON.parse(stringifi)).subscribe(
-      data=>{
-        if(data<0) {
+    this.http.post(this.urlBase + '/', JSON.parse(stringifi)).subscribe(
+      data => {
+        if (data < 0) {
           alert('one of the reference are not available');
         }
           else{
-            console.log('success');
+            console.log('success' + data);
           }
       }
     );
@@ -198,11 +242,21 @@ export class InterventionService {
     this._index = index;
   }
   public findAll(){
-    this.http.get<Array<Intervention>>(this.urlBase + '/').subscribe(
-      data => {
-        this.interventions = data ;}
-      // }, error => {
-      //   console.log(error); }
-    );
+    if (this.userService.User.role === 'admin') {
+      this.http.get<Array<Intervention>>(this.urlBase + '/').subscribe(
+        data => {
+          this.interventions = data;
+        }
+        // }, error => {
+        //   console.log(error); }
+      );
+    }
+    else {// (this.userService.User.role === 'collaborateur')
+  this.http.get<Array<Intervention>>(this.urlBase + '/codeCollan/' + this.userService.User.collaborateur.codeCollaborateur).subscribe(
+    data => {
+      this.interventions = data;
+    }
+  );
+    }
   }
 }

@@ -39,6 +39,13 @@ import {OperationStockCreateComponent} from './operation-stock/operation-stock-c
 import {OperationStockListComponent} from './operation-stock/operation-stock-list/operation-stock-list.component';
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+<<<<<<< HEAD
+import {MatDatepickerModule} from '@angular/material/datepicker';
+=======
+import { LoginComponent } from './login/login.component';
+
+>>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
 @NgModule({
   declarations: [
     AppComponent,
@@ -64,7 +71,8 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     InterventionConsielComponent,
     OperationStockComponent,
     OperationStockCreateComponent,
-    OperationStockListComponent
+    OperationStockListComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
@@ -84,9 +92,11 @@ import {MatPaginatorModule} from '@angular/material/paginator';
     HttpClientModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    MatDatepickerModule,
+    NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EquipeCreateComponent],
+  entryComponents: [EquipeCreateComponent,CollaborateurListComponent],
 })
 export class AppModule {}
