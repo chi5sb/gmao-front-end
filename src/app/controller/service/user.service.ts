@@ -1,9 +1,11 @@
+import { AppRoutingModule } from './../../app-routing.module';
 import { Injectable } from '@angular/core';
-import {User} from '../model/user.model';
-import {HttpClient} from '@angular/common/http';
+import { User } from '../model/user.model';
+import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class UserService {
   private _User: User;
@@ -32,18 +34,47 @@ export class UserService {
     this._Users = value;
   }
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private router: Router) {}
 
   isconnected() {
-    this.http.get(this.UrlBase + '/connected/' + this.User.login + '/pswrd/' + this.User.password).subscribe(
-      data => {
-        if (data === 2){
+    this.http
+      .get(
+        this.UrlBase +
+          '/connected/' +
+          this.User.login +
+          '/pswrd/' +
+          this.User.password
+      )
+      .subscribe((data) => {
+        if (data === 2) {
           console.log('succes');
-        }
-        else{
+        } else {
           console.log('failed');
         }
-      }
-    );
+      });
+  }
+  seConnecter(username: string, password: string) {
+    this.http
+      .get<User>(this.UrlBase + '/login/' + username + '/pswrd/' + password)
+      .subscribe((data) => {
+        this._User = data;
+      });
+    this.redirect(this._User.role);
+  }
+
+  redirect(role: string) {
+    switch (role) {
+      case 'admin':
+        this.router.navigate(['/admin']);
+        break;
+      case 'chef-equipe':
+        this.router.navigate(['/chef-equipe']);
+        break;
+      case 'chef-stock':
+        this.router.navigate(['/operationStock']);
+        break;
+      default:
+        break;
+    }
   }
 }
