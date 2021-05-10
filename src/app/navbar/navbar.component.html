@@ -13,24 +13,25 @@
       <span class="example-spacer"></span>
       <div fxShow="true" fxHide.lt-md="true">
         <a routerLink="home" routerLinkActive="active" mat-button>Accueil</a>
-        <a routerLink="admin" routerLinkActive="active" mat-button
+        <a routerLink="admin" routerLinkActive="active" mat-button [hidden]="isAdmin()"
           >Administrateur</a
         >
-        <a routerLink="collaborateur" routerLinkActive="active" mat-button
+        <a routerLink="collaborateur" routerLinkActive="active" mat-button [hidden]="isAdmin()&&Collaborateur()"
           >Collaborateur</a
         >
-        <a routerLink="equipes" routerLinkActive="active" mat-button>Equipes</a>
+        <a routerLink="equipes" routerLinkActive="active" mat-button [hidden]="isAdmin()">Equipes</a>
 
-        <a routerLink="chef-equipe" routerLinkActive="active" mat-button
+        <a routerLink="chef-equipe" routerLinkActive="active" mat-button [hidden]="isAdmin()&&ischef()"
           >Chef-Equipe</a
         >
-        <a routerLink="stock" routerLinkActive="active" mat-button
+        <a routerLink="stock" routerLinkActive="active" mat-button [hidden]="isAdmin()&&isStockRespo()"
         >Stock</a
         >
-        <a routerLink="intervention" routerLinkActive="active" mat-button
+        <a routerLink="intervention" routerLinkActive="active" mat-button [hidden]="isAdmin()"
         >Intervention</a
         >
-        <a routerLink="operationStock" mat-button>OperationStock</a>
+        <a routerLink="operationStock" mat-button [hidden]="isAdmin()&&isStockRespo()"
+        >OperationStock</a>
       </div>
     </mat-toolbar-row>
   </mat-toolbar>

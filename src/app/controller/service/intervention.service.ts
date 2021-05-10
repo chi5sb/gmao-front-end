@@ -12,7 +12,11 @@ import { CollaborateurListComponent } from 'src/app/collaborateur/collaborateur-
 import { StockListComponent } from 'src/app/stock/stock-list/stock-list.component';
 =======
 import {InterventionMembreEquipe} from '../model/intervention-membre-equipe.model';
+<<<<<<< HEAD
 >>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
+=======
+import {UserService} from './user.service';
+>>>>>>> ae95c2febfe1e39daf4afce96485910f25e14ae9
 
 @Injectable({
   providedIn: 'root',
@@ -21,10 +25,14 @@ export class InterventionService {
 
 
 <<<<<<< HEAD
+<<<<<<< HEAD
   constructor(private http: HttpClient,private stockService: StockService,public dialog: MatDialog) {}
 =======
   constructor(private http: HttpClient, private stockService: StockService) {}
 >>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
+=======
+  constructor(private http: HttpClient, private stockService: StockService, private userService: UserService) {}
+>>>>>>> ae95c2febfe1e39daf4afce96485910f25e14ae9
   public _intervention: Intervention;
   public _interventions: Array<Intervention>;
   private _collaborateurs = this.intervention.interventionMembreEquipe;
@@ -215,7 +223,7 @@ export class InterventionService {
 
   // JSON.stringify(circularReference, getCircularReplacer());
   saveIntervention() {
-    console.log(this.intervention)
+    console.log(this.intervention);
     const stringifi = JSON.stringify(this.intervention, this.getCircularReplacer());
 
     this.http.post(this.urlBase + '/', JSON.parse(stringifi)).subscribe(
@@ -234,11 +242,21 @@ export class InterventionService {
     this._index = index;
   }
   public findAll(){
-    this.http.get<Array<Intervention>>(this.urlBase + '/').subscribe(
-      data => {
-        this.interventions = data ; }
-      // }, error => {
-      //   console.log(error); }
-    );
+    if (this.userService.User.role === 'admin') {
+      this.http.get<Array<Intervention>>(this.urlBase + '/').subscribe(
+        data => {
+          this.interventions = data;
+        }
+        // }, error => {
+        //   console.log(error); }
+      );
+    }
+    else {// (this.userService.User.role === 'collaborateur')
+  this.http.get<Array<Intervention>>(this.urlBase + '/codeCollan/' + this.userService.User.collaborateur.codeCollaborateur).subscribe(
+    data => {
+      this.interventions = data;
+    }
+  );
+    }
   }
 }
