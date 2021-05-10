@@ -1,13 +1,19 @@
 
 #search1{
     margin-right: 10%;
-    margin-left: 25%;
-    width: 20%;
+    margin-left: 30%;
+    width: 15%;
     margin-bottom: 20px;
 }
 #Search2{
-    width: 20%;
-    margin-left: 20px;
+    width: 15%;
+    margin-left: 30px;
+}
+
+#Search3{
+   margin-right: 5%;
+   margin-bottom: 10px;
+   margin-left: 20%;
 }
 #btnSearch{
     width: 6%;

@@ -9,6 +9,9 @@ import {StockService} from "./stock-service.service";
 import {Conseils} from "../model/conseils.model";
 import {any} from "codelyzer/util/function";
 import { InterventionVo } from '../model/intervention-vo.model';
+import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
+import { CollaborateurListComponent } from 'src/app/collaborateur/collaborateur-list/collaborateur-list.component';
+import { StockListComponent } from 'src/app/stock/stock-list/stock-list.component';
 
 @Injectable({
   providedIn: 'root',
@@ -16,7 +19,7 @@ import { InterventionVo } from '../model/intervention-vo.model';
 export class InterventionService {
 
 
-  constructor(private http: HttpClient,private stockService: StockService) {}
+  constructor(private http: HttpClient,private stockService: StockService,public dialog: MatDialog) {}
   public _intervention: Intervention;
   public _interventions: Array<Intervention>;
   private _collaborateurs = this.intervention.interventionCollaborateur;
@@ -152,6 +155,10 @@ export class InterventionService {
   set interventions(value: Array<Intervention>) {
     this._interventions = value;
   }
+  openDialog() {
+    this.dialog.open(CollaborateurListComponent);
+  }
+
   public findByCriteria(){
     this.http.post<Array<Intervention>>(this.urlCriteria,this.interventionVo).subscribe(
       data => {
@@ -162,6 +169,7 @@ export class InterventionService {
         console.log(error); }
     );
   }
+  
   saveCollaboraateur() {
     this.collaborateur.intervention = this.intervention;
     this.collaborateurs.push(this._collaborateur);

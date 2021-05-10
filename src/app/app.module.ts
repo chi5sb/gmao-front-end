@@ -40,7 +40,7 @@ import {OperationStockListComponent} from './operation-stock/operation-stock-lis
 import {OperationStockComponent} from './operation-stock/operation-stock.component';
 import {MatPaginatorModule} from '@angular/material/paginator';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
-
+import {MatDatepickerModule} from '@angular/material/datepicker';
 @NgModule({
   declarations: [
     AppComponent,
@@ -86,10 +86,11 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
     HttpClientModule,
     MatSnackBarModule,
     MatPaginatorModule,
+    MatDatepickerModule,
     NgbModule,
   ],
   providers: [],
   bootstrap: [AppComponent],
-  entryComponents: [EquipeCreateComponent],
+  entryComponents: [CollaborateurListComponent],
 })
 export class AppModule {}

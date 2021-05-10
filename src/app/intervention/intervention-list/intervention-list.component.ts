@@ -36,5 +36,7 @@ public update(index: number, intervention: Intervention){
 public findByCriteria(){
   this.interventionService.findByCriteria();
 }
-
+public openDialog() {
+  this.interventionService.openDialog();
+}
 }
