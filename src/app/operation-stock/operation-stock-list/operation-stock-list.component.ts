@@ -16,6 +16,11 @@ export class OperationStockListComponent implements OnInit {
   reference: string;
   private closeResult: string;
 
+  references: string;
+  Qte: string;
+  QteMin: string;
+  QteMax: string;
+
   constructor(
     private stockService: StockService,
     private operationStockservice: OperationstockService,
@@ -40,16 +45,17 @@ export class OperationStockListComponent implements OnInit {
 
   update(i: number, c: OperationStock) {}
 
-  find(reference: String) {
-    this.operationStockservice.find(reference);
+  Enter(reference: string) {
+ //   this.operationStockservice.find(reference);
   }
 
- // findbyCritere(qteMax: any, qteMin: any) {
-  // }
+//   findbyCritere(Qte: number, references: string) {
+ //  }
 
   findbyCritere(qteMax: number, qteMin: number) {
     // this.operationStockservice.findByCritere(qteMax,qteMin);
   }
+
   qteMin: number;
   qteMax: number;
 
@@ -70,17 +76,19 @@ export class OperationStockListComponent implements OnInit {
     }
   }
 
-  Enter(reference: string) {
+  find(reference: string) {
   }
 
- // public findByCriteria() {
- //   this.http.post<Array<OperationStock>>(this.urlCriteria,this.operationstockVo).subscribe(
- //     data => {
- //       this.operationstocks = data;
- //     }, error => {
+
+ // public findbyCritere() {
+  //  this.http.post<Array<OperationStockListComponent>>(this.urlCriteria,this.OperationStockListComponent).subscribe(
+  //    data => {
+  //      this.OperationStockListComponent = data;
+   //     }, error => {
   //      console.log(error);
   //    }
   //  );
- // }
+//  }
+
 }
 
