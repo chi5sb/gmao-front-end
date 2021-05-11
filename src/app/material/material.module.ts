@@ -14,7 +14,7 @@ import {MatCardModule} from '@angular/material/card';
 import {MatSnackBarModule} from '@angular/material/snack-bar';
 import {MatExpansionModule} from '@angular/material/expansion';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import {MatDatepickerModule} from '@angular/material/datepicker';
+
 
 
 const  MaterialModules = [
@@ -30,8 +30,7 @@ const  MaterialModules = [
   MatCardModule,
   MatSnackBarModule,
   MatExpansionModule,
-  MatPaginatorModule,
-  MatDatepickerModule
+  MatPaginatorModule
 ];
 @NgModule({
   imports: [MaterialModules],

@@ -6,17 +6,10 @@ import { Intervention } from './../model/intervention.model';
 import {StockService} from './stock-service.service';
 import {Conseils} from '../model/conseils.model';
 import { InterventionVo } from '../model/intervention-vo.model';
-<<<<<<< HEAD
-import {MatDialog,MatDialogConfig} from '@angular/material/dialog';
-import { CollaborateurListComponent } from 'src/app/collaborateur/collaborateur-list/collaborateur-list.component';
-import { StockListComponent } from 'src/app/stock/stock-list/stock-list.component';
-=======
 import {InterventionMembreEquipe} from '../model/intervention-membre-equipe.model';
-<<<<<<< HEAD
->>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
-=======
 import {UserService} from './user.service';
->>>>>>> ae95c2febfe1e39daf4afce96485910f25e14ae9
+import {CollaborateurListComponent} from "../../collaborateur/collaborateur-list/collaborateur-list.component";
+import {MatDialog} from "@angular/material/dialog";
 
 @Injectable({
   providedIn: 'root',
@@ -24,15 +17,7 @@ import {UserService} from './user.service';
 export class InterventionService {
 
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  constructor(private http: HttpClient,private stockService: StockService,public dialog: MatDialog) {}
-=======
-  constructor(private http: HttpClient, private stockService: StockService) {}
->>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
-=======
-  constructor(private http: HttpClient, private stockService: StockService, private userService: UserService) {}
->>>>>>> ae95c2febfe1e39daf4afce96485910f25e14ae9
+  constructor(private http: HttpClient, private stockService: StockService, private userService: UserService,public dialog: MatDialog) {}
   public _intervention: Intervention;
   public _interventions: Array<Intervention>;
   private _collaborateurs = this.intervention.interventionMembreEquipe;
@@ -168,10 +153,6 @@ export class InterventionService {
   set interventions(value: Array<Intervention>) {
     this._interventions = value;
   }
-  openDialog() {
-    this.dialog.open(CollaborateurListComponent);
-  }
-
   public findByCriteria(){
     this.http.post<Array<Intervention>>(this.urlCriteria, this.interventionVo).subscribe(
       data => {
@@ -182,7 +163,6 @@ export class InterventionService {
         console.log(error); }
     );
   }
-  
   saveCollaboraateur() {
     this.collaborateur.intervention = this.intervention;
     this.collaborateurs.push(this._collaborateur);
@@ -258,5 +238,9 @@ export class InterventionService {
     }
   );
     }
+  }
+
+  openDialog() {
+    this.dialog.open(CollaborateurListComponent);
   }
 }

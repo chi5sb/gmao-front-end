@@ -28,21 +28,6 @@ export class EquipeListComponent implements OnInit {
 //   }
   ngOnInit(): void {
   }
-<<<<<<< HEAD
-  get equipeSelect(): Equipe {
-    return  this.equipeService.equipeSelect;
-  }
- public onCreate(){
-  this.equipeService.onCreate();
- }
- public onCreateCollab(){
-  this.equipeService.onCreateCollab();
- }
- 
-  public findByEquipeRef(equipe: Equipe){
-    this.equipeService.findByEquipeRef(equipe);
-}
-=======
 //   get equipeSelect(): Equipe {
 //     return  this.equipeService.equipeSelect;
 //   }
@@ -52,5 +37,4 @@ export class EquipeListComponent implements OnInit {
 //   public findByEquipeRef(equipe: Equipe){
 //     this.equipeService.findByEquipeRef(equipe);
 // }
->>>>>>> 230a387e0be3c085fb049d20f2c41689414d116f
 }

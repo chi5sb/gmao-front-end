@@ -9,7 +9,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InterventionListComponent implements OnInit {
   constructor(private interventionService: InterventionService) {}
-  
+
   page= 1;
   pageSize= 5;
   collectionSize=this.interventionService.interventions.length
@@ -36,7 +36,8 @@ public update(index: number, intervention: Intervention){
 public findByCriteria(){
   this.interventionService.findByCriteria();
 }
-public openDialog() {
-  this.interventionService.openDialog();
-}
+
+  openDialog() {
+    this.interventionService.openDialog();
+  }
 }

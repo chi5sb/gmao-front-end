@@ -24,8 +24,4 @@ export class InterventionCreateComponent implements OnInit {
   save() {
     this.interventionService.saveIntervention();
   }
-  //
-  // isfill() {
-  //   return this.intervention.code == null;
-  // }
 }

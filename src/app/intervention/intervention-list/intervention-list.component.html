@@ -1,77 +1,74 @@
 <h1 id="title" class="jumbotron p-5"  >interventions</h1>
-    
-
 
 <div class="row">
-    <input id="search1" class="form-control mr-sm-3" type="search" placeholder=" code"  [(ngModel)]="interventionVo.code" >
-  
-    <input id="Search2" class="form-control mr-sm-3" type="search" placeholder=" libelle"  [(ngModel)]="interventionVo.libelle" >
-  </div>
-  <div id="Search3" class="row">
-       <input  placeholder=" Date de Probleme"  [(ngModel)]="interventionVo.dateDeProbleme" type="datetime-local" id="meeting-time"
-       name="meeting-time" 
-       min="1999-01-01T00:00" max="2080-12-31T00:00">
-      
-     
-        <input id="Search3" placeholder="Date Debut"  [(ngModel)]="interventionVo.dateDebut" type="datetime-local" id="meeting-time"
-       name="meeting-time" 
-       min="1999-01-01T00:00" max="2080-12-31T00:00">
-      
-      <input id="Search3"  placeholder="Date Fin"  [(ngModel)]="interventionVo.dateFin" type="datetime-local" id="meeting-time"
-      name="meeting-time" 
-      min="1999-01-01T00:00" max="2080-12-31T00:00">
-   
-    <button id="btnSearch" class="btn btn-outline-success  my-2 my-sm-0" (click)="findByCriteria()">Search</button>
-  </div>
+  <input id="search1" class="form-control mr-sm-3" type="search" placeholder=" code"  [(ngModel)]="interventionVo.code" >
 
-  <div class="container">
+  <input id="Search2" class="form-control mr-sm-3" type="search" placeholder=" libelle"  [(ngModel)]="interventionVo.libelle" >
+</div>
+<div id="Search3" class="row">
+  <input  placeholder=" Date de Probleme"  [(ngModel)]="interventionVo.dateDeProbleme" type="datetime-local" id="meeting-time"
+          name="meeting-time"
+          min="1999-01-01T00:00" max="2080-12-31T00:00">
 
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="card">
-          <div
-            class="card-header"
-            style="font-family: monospace; color: #3f51b5; font-weight: bold"
-          >
-           liste interventions
-          </div>
-          <div class="card-body">
-            <table class="table">
-              <tr>
-                
-                <th style="background-color: #3f51b5; color: white">code</th>
-                <th style="background-color: #3f51b5; color: white">libelle</th>
-                <th style="background-color: #3f51b5; color: white">Etat</th>
-                <th style="background-color: #3f51b5; color: white">dateDeProbleme</th>
-                <th style="background-color: #3f51b5; color: white">dateDebut</th>
-                <th style="background-color: #3f51b5; color: white">dateFin</th>
-                <th style="background-color: #3f51b5; color: white">Action</th>
-              </tr>
-              <tbody>
 
-                  <tr *ngFor="let c of interventions | slice: (page-1) * pageSize : page * pageSize">
-                    <td>{{ c.code }}</td>
-                    <td>{{ c.libelle}}</td>
-                    <td>{{ c.dateDeProbleme}}</td>
-                    <td>{{ c.dateDebut }}</td>
-                    <td>{{ c.dateFin }}</td>
-                    
-                    <td><span (click)="delete(i,c)"> <i class="fa fa-trash ml-1 btn btn-danger"></i></span> <span (click)="update(i,c)"><i class="fa fa-edit ml-1 btn btn-info"></i> </span>
-                      <span (click)="openDialog()" ><i class="fa fa-eye ml-1 btn btn-warning"></i> </span> 
-                    </td>
+  <input id="Search3" placeholder="Date Debut"  [(ngModel)]="interventionVo.dateDebut" type="datetime-local" id="meeting-time"
+         name="meeting-time"
+         min="1999-01-01T00:00" max="2080-12-31T00:00">
 
-              </tbody>
-            </table>
-            <tfoot>
-              <ngb-pagination
-              [(page)]="page"
-              [pageSize]="pageSize"
-              [collectionSize]="interventions.length"></ngb-pagination>
-            </tfoot>
-          </div>
+  <input id="Search3"  placeholder="Date Fin"  [(ngModel)]="interventionVo.dateFin" type="datetime-local" id="meeting-time"
+         name="meeting-time"
+         min="1999-01-01T00:00" max="2080-12-31T00:00">
+
+  <button id="btnSearch" class="btn btn-outline-success  my-2 my-sm-0" (click)="findByCriteria()">Search</button>
+</div>
+
+<div class="container">
+
+  <div class="row">
+    <div class="col-lg-12">
+      <div class="card">
+        <div
+          class="card-header"
+          style="font-family: monospace; color: #3f51b5; font-weight: bold"
+        >
+          liste interventions
+        </div>
+        <div class="card-body">
+          <table class="table">
+            <tr>
+
+              <th style="background-color: #3f51b5; color: white">code</th>
+              <th style="background-color: #3f51b5; color: white">libelle</th>
+<!--              <th style="background-color: #3f51b5; color: white">Etat</th>-->
+              <th style="background-color: #3f51b5; color: white">dateDeProbleme</th>
+              <th style="background-color: #3f51b5; color: white">dateDebut</th>
+              <th style="background-color: #3f51b5; color: white">dateFin</th>
+              <th style="background-color: #3f51b5; color: white">Action</th>
+            </tr>
+            <tbody>
+
+            <tr *ngFor="let c of interventions | slice: (page-1) * pageSize : page * pageSize">
+              <td>{{ c.code }}</td>
+              <td>{{ c.libelle}}</td>
+              <td>{{ c.dateDeProbleme}}</td>
+              <td>{{ c.dateDebut }}</td>
+              <td>{{ c.dateFin }}</td>
+
+              <td><span (click)="delete(i,c)"> <i class="fa fa-trash ml-1 btn btn-danger"></i></span> <span (click)="update(i,c)"><i class="fa fa-edit ml-1 btn btn-info"></i> </span>
+                <span (click)="openDialog()" ><i class="fa fa-eye ml-1 btn btn-warning"></i> </span>
+              </td>
+
+            </tbody>
+          </table>
+          <tfoot>
+          <ngb-pagination
+            [(page)]="page"
+            [pageSize]="pageSize"
+            [collectionSize]="interventions.length"></ngb-pagination>
+          </tfoot>
         </div>
       </div>
-     
     </div>
+
   </div>
-  
+</div>
